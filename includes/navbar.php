@@ -27,14 +27,14 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Productos
+                        Aplicaciones
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Final_Alvarado/vistas/productos/index.php">Crear producto</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/aplicaciones/index.php">Crear Aplicacion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Final_Alvarado/vistas/productos/buscar.php">Buscar producto</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/aplicaciones/buscar.php">Buscar Aplicacion</a>
                         </li>
                     </ul>
                 </li>
