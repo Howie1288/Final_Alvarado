@@ -1,9 +1,9 @@
 <?php
-require '../../modelos/Cliente.php';
+require '../../modelos/Programador.php';
 try {
-    $cliente = new Cliente($_GET);
+    $programador = new Programador ($_GET);
     
-    $clientes = $cliente->buscar();
+    $programador = $programador->buscar();
 
 } catch (PDOException $e) {
     $error = $e->getMessage();
@@ -36,14 +36,14 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($clientes) > 0):?>
-                        <?php foreach($clientes as $key => $cliente) : ?>
+                        <?php if(count($programadores) > 0):?>
+                        <?php foreach($programadores as $key => $programador) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $cliente['CLIENTE_NOMBRE'] ?></td>
-                            <td><?= $cliente['CLIENTE_NIT'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/clientes/modificar.php?cliente_id=<?= $cliente['CLIENTE_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/clientes/eliminar.php?cliente_id=<?= $cliente['CLIENTE_ID']?>">Eliminar</a></td>
+                            <td><?= $programador['programador_NOMBRE'] ?></td>
+                            <td><?= $programador['programador_NIT'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?programador_id=<?= $programador['programador_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?programador_id=<?= $programador['programador_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -57,7 +57,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/vistas/clientes/buscar.php" class="btn btn-info w-100">Regresar al formulario</a>
+                <a href="/Final_Alvarado/vistas/programadores/buscar.php" class="btn btn-info w-100">Regresar al formulario</a>
             </div>
         </div>
     </div>

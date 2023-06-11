@@ -1,11 +1,15 @@
 <?php
-require '../../modelos/Cliente.php';
+require '../../modelos/Programador.php';
 
-if ($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cliente_id'] != '') {
+
+if ($_POST['cliente_nombre'] != '' && $_POST['cliente_nit'] != '') {
+
+
 
     try {
-        $cliente = new Cliente($_POST);
-        $resultado = $cliente->modificar();
+        $programador = new Programador($_POST);
+        $resultado = $programador->guardar();
+        $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2) {
@@ -14,6 +18,7 @@ if ($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cl
 } else {
     $error = "Debe llenar todos los datos";
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +38,7 @@ if ($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cl
             <div class="col-lg-6">
                 <?php if ($resultado) : ?>
                     <div class="alert alert-success" role="alert">
-                        Modificado exitosamente!
+                        Guardado exitosamente!
                     </div>
                 <?php else : ?>
                     <div class="alert alert-danger" role="alert">
@@ -45,7 +50,7 @@ if ($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cl
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/clientes/buscar.php?cliente_nombre=<?= $_POST['cliente_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/Final_Alvarado/vistas/programadores/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

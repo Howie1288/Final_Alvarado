@@ -1,18 +1,18 @@
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
     <div class="container">
-        <h1 class="text-center">Formulario de ingreso de clientes</h1>
+        <h1 class="text-center">Formulario de ingreso de programadores</h1>
         <div class="row justify-content-center">
-            <form action="/Final_Alvarado/controladores/clientes/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/Final_Alvarado/controladores/Programadores/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                    <label for="cliente_nombre">Nombre del cliente</label>
+                    <label for="cliente_nombre">Nombre del programador</label>
                         <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">Codigo NIT del cliente</label>
+                        <label for="cliente_nit">Codigo NIT del programador</label>
                         <input type="text" name="cliente_nit" id="cliente_nit" class="form-control">
                     </div>
                 </div>
