@@ -115,7 +115,7 @@ require '../../modelos/Cliente.php';
 
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/Practica-No-9/vistas/ventas/buscar.php" class="btn btn-info w-100">Regresar al formulario</a>
+                <a href="/Final_Alvarado/vistas/ventas/buscar.php" class="btn btn-info w-100">Regresar al formulario</a>
             </div>
         </div>
     </div>
