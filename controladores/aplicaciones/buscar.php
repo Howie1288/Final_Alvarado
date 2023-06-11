@@ -1,9 +1,9 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Aplicacion.php';
 try {
-    $producto = new Producto($_GET);
+    $aplicacion = new Aplicacion($_GET);
 
-    $productos = $producto->buscar();
+    $aplicaciones = $aplicacion->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -37,14 +37,14 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (count($productos) > 0) : ?>
-                            <?php foreach ($productos as $key => $producto) : ?>
+                        <?php if (count($aplicaciones) > 0) : ?>
+                            <?php foreach ($aplicaciones as $key => $aplicacion) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $producto['PRODUCTO_NOMBRE'] ?></td>
-                                    <td><?= $producto['PRODUCTO_PRECIO'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/productos/modificar.php?producto_id=<?= $producto['PRODUCTO_ID'] ?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/productos/eliminar.php?producto_id=<?= $producto['PRODUCTO_ID'] ?>">Eliminar</a></td>
+                                    <td><?= $aplicacion['APLICACION_NOMBRE'] ?></td>
+                                    <td><?= $producto['APLICACION_PRECIO'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/aplicaciones/modificar.php?id_aplicacion=<?= $producto['ID_APLICACION'] ?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/aplicaciones/eliminar.php?id_aplicacion=<?= $producto['ID_APLICACION'] ?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
@@ -58,7 +58,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/vistas/productos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/Final_Alvarado/vistas/aplicaciones/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

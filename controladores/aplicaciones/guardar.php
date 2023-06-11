@@ -1,16 +1,21 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Aplicacion.php';
 
 
-try {
-    $producto = new Producto($_GET);
-    $resultado = $producto->eliminar();
-} catch (PDOException $e) {
-    $error = $e->getMessage();
-} catch (Exception $e2) {
-    $error = $e2->getMessage();
+if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_precio'] != '') {
+
+    try {
+        $aplicacion = new Aplicacion($_POST);
+        $resultado = $aplicacion->guardar();
+        $error = "NO se guardó correctamente";
+    } catch (PDOException $e) {
+        $error = $e->getMessage();
+    } catch (Exception $e2) {
+        $error = $e2->getMessage();
+    }
+} else {
+    $error = "Debe llenar todos los datos";
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -30,7 +35,7 @@ try {
             <div class="col-lg-6">
                 <?php if ($resultado) : ?>
                     <div class="alert alert-success" role="alert">
-                        !! Eliminado exitosamente !!
+                       !! Guardado exitosamente !!
                     </div>
                 <?php else : ?>
                     <div class="alert alert-danger" role="alert">
@@ -42,7 +47,7 @@ try {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/productos/buscar.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/Final_Alvarado/vistas/aplicaciones/index.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>

@@ -1,19 +1,16 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Aplicacion.php';
 
-if ($_POST['producto_nombre'] != '' && $_POST['producto_precio']  != '' && $_POST['producto_id'] != '') {
 
-    try {
-        $producto = new Producto($_POST);
-        $resultado = $producto->modificar();
-    } catch (PDOException $e) {
-        $error = $e->getMessage();
-    } catch (Exception $e2) {
-        $error = $e2->getMessage();
-    }
-} else {
-    $error = "Debe llenar todos los datos en los campos";
+try {
+    $aplicacion = new Aplicacion($_GET);
+    $resultado = $aplicacion->eliminar();
+} catch (PDOException $e) {
+    $error = $e->getMessage();
+} catch (Exception $e2) {
+    $error = $e2->getMessage();
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +30,7 @@ if ($_POST['producto_nombre'] != '' && $_POST['producto_precio']  != '' && $_POS
             <div class="col-lg-6">
                 <?php if ($resultado) : ?>
                     <div class="alert alert-success" role="alert">
-                        Modificado exitosamente!
+                        !! Eliminado exitosamente !!
                     </div>
                 <?php else : ?>
                     <div class="alert alert-danger" role="alert">
@@ -45,7 +42,7 @@ if ($_POST['producto_nombre'] != '' && $_POST['producto_precio']  != '' && $_POS
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/productos/buscar.php?producto_nombre=<?= $_POST['producto_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/Final_Alvarado/controladores/aplicaciones/buscar.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>

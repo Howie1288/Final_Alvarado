@@ -1,19 +1,19 @@
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
     <div class="container">
-        <h1 class="text-center">Formulario de productos</h1>
+        <h1 class="text-center">Formulario de Aplicaciones</h1>
         <div class="row justify-content-center">
-            <form action="/Final_Alvarado/controladores/productos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/Final_Alvarado/controladores/aplicaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="producto_nombre">Nombre del producto</label>
-                        <input type="text" name="producto_nombre" id="producto_nombre" class="form-control">
+                        <label for="nombre">Nombre de la Aplicacion</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="producto_precio">Precio del producto</label>
-                        <input type="number" step="0.01" min="0" name="producto_precio" id="producto_precio" class="form-control">
+                        <label for="precio">Precio del Aplicacion</label>
+                        <input type="number" step="0.01" min="0" name="precio" id="precio" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">

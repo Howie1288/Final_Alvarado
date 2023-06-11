@@ -1,9 +1,9 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Aplicacion.php';
     try {
-        $producto = new Producto($_GET);
+        $aplicacion = new Aplicacion($_GET);
 
-        $productos = $producto->buscar();
+        $aplicaciones = $aplicacion->buscar();
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
@@ -12,20 +12,20 @@ require '../../modelos/Producto.php';
 ?>
 <?php include_once '../../includes/header.php'?>
     <div class="container">
-        <h1 class="text-center">Modificar Productos</h1>
+        <h1 class="text-center">Modificar Aplicaciones</h1>
         <div class="row justify-content-center">
-            <form action="/Final_Alvarado/controladores/productos/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="producto_id" value="<?= $productos[0]['PRODUCTO_ID'] ?>" >
+            <form action="/Final_Alvarado/controladores/aplicaciones/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
+                <input type="hidden" name="id_aplicacion" value="<?= $productos[0]['ID_APLICACION'] ?>" >
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="producto_nombre">Nombre del producto</label>
-                        <input type="text" name="producto_nombre" id="producto_nombre" class="form-control" value="<?= $productos[0]['PRODUCTO_NOMBRE'] ?>">
+                        <label for="nombre">Nombre de la Aplicacion</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control" value="<?= $productos[0]['APLICACION_NOMBRE'] ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="producto_precio">Precio del producto</label>
-                        <input type="number" step="0.01" min="0" name="producto_precio" id="producto_precio" class="form-control" value="<?= $productos[0]['PRODUCTO_PRECIO'] ?>">
+                        <label for="precio">Precio de la Aplicacion</label>
+                        <input type="number" step="0.01" min="0" name="precio" id="precio" class="form-control" value="<?= $productos[0]['APLICACION_PRECIO'] ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
