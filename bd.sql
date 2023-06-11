@@ -1,34 +1,34 @@
-
 CREATE TABLE
     programadores (
         id_programador serial PRIMARY KEY,
         nombre VARCHAR(255) not null,
-        apellido VARCHAR(255),
-        telefono VARCHAR(255),
-        direccion VARCHAR(255),
-        correo_electronico VARCHAR(255)
+        apellido VARCHAR(255) not null,
+        telefono VARCHAR(255) not null,
+        direccion VARCHAR(255) null,
+        correo_electronico VARCHAR(255) null
     );
 
 CREATE TABLE aplicaciones (
         id_aplicacion serial PRIMARY KEY,
-        nombre VARCHAR(255),
+        nombre VARCHAR(255) not null
     );
 
-CREATE TABLE
-    Asignacion (
-        id_asignacion serial PRIMARY KEY,
-        id_aplicacion serial ,
-        id_programador serial,
-        FOREIGN KEY (id_aplicacion) REFERENCES aplicaciones(id_aplicacion) ON UPDATE CASCADE ON DELETE CASCADE,
-        FOREIGN KEY (id_programador) REFERENCES programadores (id_programador) ON UPDATE CASCADE ON DELETE CASCADE
-    );
+CREATE TABLE asignacion_aplicaciones (
+    id_asignacion SERIAL8 PRIMARY KEY,
+    id_aplicacion INT NOT NULL,
+    id_programador INT NOT NULL,
+    FOREIGN KEY (id_aplicacion) REFERENCES aplicaciones(id_aplicacion),
+    FOREIGN KEY (id_programador) REFERENCES programadores (id_programador)
+);
+
+
 
 CREATE TABLE
-    Tareas (
+    tareas (
         id_tarea serial PRIMARY KEY,
-        id_aplicacion serial ,
+        id_aplicacion int not null,
         tarea VARCHAR(255),
         fecha_realizacion DATE,
-        estado VARCHAR(255)
-        FOREIGN KEY (id_aplicacion) REFERENCES aplicaciones (id_aplicacion) ON UPDATE CASCADE ON DELETE CASCADE
-    );
+        estado VARCHAR(255),
+        FOREIGN KEY (id_aplicacion) REFERENCES aplicaciones (id_aplicacion)
+        );
