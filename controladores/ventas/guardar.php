@@ -60,7 +60,7 @@ if ($_POST['venta_cliente'] != '' && $_POST['venta_fecha'] != '' && count($produ
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Practica-No-9/vistas/ventas/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/Final_Alvarado/vistas/ventas/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
