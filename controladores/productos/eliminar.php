@@ -42,7 +42,7 @@ try {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Practica-No-9/controladores/productos/buscar.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/Final_Alvarado/controladores/productos/buscar.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>
