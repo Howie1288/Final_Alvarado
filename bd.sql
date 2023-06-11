@@ -22,12 +22,14 @@ CREATE TABLE asignacion_aplicaciones (
     FOREIGN KEY (id_programador) REFERENCES programadores (id_programador)
 );
 
-CREATE TABLE
-    tareas (
-        id_tarea serial PRIMARY KEY,
-        id_aplicacion int not null,
-        tarea VARCHAR(255),
-        fecha_realizacion DATE,
-        estado VARCHAR(255),
-        FOREIGN KEY (id_aplicacion) REFERENCES aplicaciones (id_aplicacion)
-        );
+
+        CREATE TABLE tareas (
+    tarea_id serial PRIMARY KEY,
+    nombre_tarea VARCHAR(30) NOT NULL,
+    id_aplicacion int not null,
+    descripcion_tarea VARCHAR(255) NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_finalizacion DATE NOT NULL,
+    estado VARCHAR(20) NOT NULL,
+    FOREIGN KEY (id_aplicacion) REFERENCES aplicaciones (id_aplicacion)
+);
