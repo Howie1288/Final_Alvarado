@@ -9,23 +9,26 @@ CREATE TABLE
         correo_electronico VARCHAR(255)
     );
 
-CREATE TABLE aplserial s (
+CREATE TABLE aplicaciones (
         id_aplicacion serial PRIMARY KEY,
         nombre VARCHAR(255),
     );
 
 CREATE TABLE
-    AsignacionAplicaciones (
+    Asignacion (
         id_asignacion serial PRIMARY KEY,
-        id_aplicacion INTEGER REFERENCES Aplicaciones(id_aplicacion),
-        id_programador INTEGER REFERENCES Programadores(id_programador)
+        id_aplicacion serial ,
+        id_programador serial,
+        FOREIGN KEY (id_aplicacion) REFERENCES aplicaciones(id_aplicacion) ON UPDATE CASCADE ON DELETE CASCADE,
+        FOREIGN KEY (id_programador) REFERENCES programadores (id_programador) ON UPDATE CASCADE ON DELETE CASCADE
     );
 
 CREATE TABLE
     Tareas (
         id_tarea serial PRIMARY KEY,
-        id_aplicacion INTEGER REFERENCES Aplicaciones(id_aplicacion),
+        id_aplicacion serial ,
         tarea VARCHAR(255),
         fecha_realizacion DATE,
         estado VARCHAR(255)
+        FOREIGN KEY (id_aplicacion) REFERENCES aplicaciones (id_aplicacion) ON UPDATE CASCADE ON DELETE CASCADE
     );
