@@ -2,7 +2,7 @@
 require '../../modelos/Programador.php';
 
 
-if ($_POST['cliente_nombre'] != '' && $_POST['cliente_nit'] != '') {
+if ($_POST['nombre'] != '' && $_POST['apellido'] != '') {
 
 
 

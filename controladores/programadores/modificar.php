@@ -1,7 +1,7 @@
 <?php
 require '../../modelos/Programador.php';
 
-if ($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cliente_id'] != '') {
+if ($_POST['nombre'] != '' && $_POST['apellido']  != '' && $_POST['id_programador'] != '') {
 
     try {
         $programador = new Programador($_POST);
@@ -45,7 +45,7 @@ if ($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cl
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/programadores/buscar.php?cliente_nombre=<?= $_POST['cliente_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/Final_Alvarado/controladores/programadores/buscar.php?nombre=<?= $_POST['nombre'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

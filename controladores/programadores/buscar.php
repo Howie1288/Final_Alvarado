@@ -30,7 +30,7 @@ try {
                         <tr>
                             <th>NO. </th>
                             <th>NOMBRE</th>
-                            <th>NIT</th>
+                            <th>APELLIDO</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -41,9 +41,9 @@ try {
                         <tr>
                             <td><?= $key + 1 ?></td>
                             <td><?= $programador['programador_NOMBRE'] ?></td>
-                            <td><?= $programador['programador_NIT'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?programador_id=<?= $programador['programador_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?programador_id=<?= $programador['programador_ID']?>">Eliminar</a></td>
+                            <td><?= $programador['programador_APELLIDO'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?id_programador=<?= $programador['id_programador']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?id_programador=<?= $programador['id_programador']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
