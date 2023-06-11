@@ -40,14 +40,14 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Clientes
+                        Programadores
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Final_Alvarado/vistas/clientes/index.php">Crear cliente</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/programadores/index.php">Crear Programador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Final_Alvarado/vistas/clientes/buscar.php">Buscar cliente</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/programadores/buscar.php">Buscar programador</a>
                         </li>
                     </ul>
                 </li>

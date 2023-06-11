@@ -6,14 +6,14 @@
             <form action="/Final_Alvarado/controladores/clientes/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nombre">Nombre del programador/label>
-                        <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control" required>
+                        <label for="nombre">Nombre del programador</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">Codigo NIT del programador</label>
-                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control">
+                        <label for="apellido">Apellido del programador</label>
+                        <input type="text" name="apellido" id="apellido" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
