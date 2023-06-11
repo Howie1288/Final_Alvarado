@@ -1,41 +1,65 @@
 <?php
 require_once 'Conexion.php';
-class Aplicacion extends Conexion
+class Tarea extends Conexion
 {
+    public $tarea_id;
+    public $nombre_tarea;
     public $id_aplicacion;
-    public $nombre;
-    public $precio;
+    public $descripcion_tarea;
+    public $fecha_inicio;
+    public $fecha_finalizacion;
+    public $estado;
     
 
     public function __construct($args = [])
     {
-        $this->id_aplicacion= $args['id_aplicacion'] ?? null;
-        $this->nombre = $args['nombre'] ?? '';
-        $this->precio = $args['precio'] ?? '';
+        $this->tarea_id= $args['tarea_id'] ?? null;
+        $this->nombre_tarea = $args['nombre_tarea'] ?? '';
+        $this->id_aplicacion = $args['id_aplicacion'] ?? '';
+        $this->descripcion_tarea = $args['descripcion_tarea'] ?? '';
+        $this->fecha_inicio = $args['fecha_inicio'] ?? '';
+        $this->fecha_finalizacion = $args['fecha_finalizacion'] ?? '';
+        $this->estado = $args['estado'] ?? '';
 
     }
 
     public function guardar()
     {
-        $sql = "INSERT INTO aplicaciones(nombre, precio) values('$this->nombre','$this->precio')";
+        $sql = "INSERT INTO tareas(nombre_tarea, id_aplicacion, descripcion_tarea, fecha_inicio, fecha_finalizacion, estado ) values('$this->nombre_tarea','$this->id_aplicacion','$this->descripcion_tarea','$this->fecha_inicio','$this->fecha_finalizacion','$this->estado')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar()
     {
-        $sql = "SELECT * from aplicaciones where situacion = 1 ";
+        $sql = "SELECT * from tareas where estado = 1 ";
 
-        if ($this->nombre != '') {
-            $sql .= " and nombre like '%$this->nombre%' ";
+        if ($this->nombre_tarea != '') {
+            $sql .= " and nombre_tarea like '%$this->nombre_tarea%' ";
         }
 
-        if ($this->precio != '') {
-            $sql .= " and precio = $this->precio ";
+        if ($this->id_aplicacion != '') {
+            $sql .= " and id_aplicacion = $this->id_aplicacion ";
         }
 
-        if ($this->id_aplicacion!= null) {
-            $sql .= " and id_aplicacion= $this->id_aplicacion";
+        if ($this->descripcion_tarea != '') {
+            $sql .= " and descripcion_tarea = $this->descripcion_tarea ";
+        }
+
+        if ($this->fecha_inicio != '') {
+            $sql .= " and fecha_inicio = $this->fecha_inicio ";
+        }
+
+        if ($this->fecha_finalizacion != '') {
+            $sql .= " and fecha_finalizacion = $this->fecha_finalizacion ";
+        }
+
+        if ($this->estado != '') {
+            $sql .= " and estado = $this->estado ";
+        }
+
+        if ($this->tarea_id!= null) {
+            $sql .= " and tarea_id= $this->tarea_id";
         }
 
         $resultado = self::servir($sql);
@@ -44,7 +68,7 @@ class Aplicacion extends Conexion
 
     public function modificar()
     {
-        $sql = "UPDATE aplicaciones SET nombre = '$this->nombre', precio = $this->precio where id_aplicacion= $this->id_aplicacion";
+        $sql = "UPDATE tareas SET nombre_tarea = '$this->nombre_tarea', id_aplicacion = '$this->id_aplicacion', descripcion_tarea = '$this->descripcion_tarea', fecha_inicio = '$this->fecha_inicio', fecha_finalizacion = '$this->fecha_finalizacion', estado = '$this->estado',where tarea_id= $this->tarea_id";
 
         $resultado = self::ejecutar($sql);
         return $resultado;
@@ -52,7 +76,7 @@ class Aplicacion extends Conexion
 
     public function eliminar()
     {
-        $sql = "UPDATE aplicaciones SET producto_situacion = 0 where id_aplicacion= $this->id_aplicacion";
+        $sql = "UPDATE tareas SET estado = 0 where tarea_id = $this->tarea_id";
 
         $resultado = self::ejecutar($sql);
         return $resultado;
