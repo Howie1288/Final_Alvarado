@@ -5,7 +5,8 @@ CREATE TABLE
         apellido VARCHAR(255) not null,
         telefono VARCHAR(255) not null,
         direccion VARCHAR(255) null,
-        correo_electronico VARCHAR(255) null
+        correo_electronico VARCHAR(255) null,
+        programador_situacion CHAR(1)
     );
 
 CREATE TABLE aplicaciones (
