@@ -15,13 +15,13 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Practica-No-9/vistas/ventas/index.php">Ingresar venta</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/ventas/index.php">Ingresar venta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Practica-No-9/vistas/ventas/buscar.php">Buscar venta</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/ventas/buscar.php">Buscar venta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Practica-No-9/controladores/ventas/detalle_ventas.php">Detalle de venta</a>
+                            <a class="nav-link" href="/Final_Alvarado/controladores/ventas/detalle_ventas.php">Detalle de venta</a>
                         </li>
                     </ul>
                 </li>
@@ -31,10 +31,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Practica-No-9/vistas/productos/index.php">Crear producto</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/productos/index.php">Crear producto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Practica-No-9/vistas/productos/buscar.php">Buscar producto</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/productos/buscar.php">Buscar producto</a>
                         </li>
                     </ul>
                 </li>
@@ -44,10 +44,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Practica-No-9/vistas/clientes/index.php">Crear cliente</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/clientes/index.php">Crear cliente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Practica-No-9/vistas/clientes/buscar.php">Buscar cliente</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/clientes/buscar.php">Buscar cliente</a>
                         </li>
                     </ul>
                 </li>
