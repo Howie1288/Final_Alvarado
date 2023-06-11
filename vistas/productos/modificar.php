@@ -14,7 +14,7 @@ require '../../modelos/Producto.php';
     <div class="container">
         <h1 class="text-center">Modificar Productos</h1>
         <div class="row justify-content-center">
-            <form action="/Practica-No-9/controladores/productos/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/Final_Alvarado/controladores/productos/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <input type="hidden" name="producto_id" value="<?= $productos[0]['PRODUCTO_ID'] ?>" >
                 <div class="row mb-3">
                     <div class="col">
