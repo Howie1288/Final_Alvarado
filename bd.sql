@@ -21,8 +21,6 @@ CREATE TABLE asignacion_aplicaciones (
     FOREIGN KEY (id_programador) REFERENCES programadores (id_programador)
 );
 
-
-
 CREATE TABLE
     tareas (
         id_tarea serial PRIMARY KEY,
