@@ -55,3 +55,35 @@ try {
     </div>
 </div>
 <?php include_once '../../includes/footer.php' ?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar tarea</title>
+</head>
+<body>
+    <h1>Agregar tarea</h1>
+    <form method="post" action="procesar_tarea.php">
+        <label for="nombre_tarea">Nombre de la tarea:</label><br>
+        <input type="text" id="nombre_tarea" name="nombre_tarea"><br>
+
+        <label for="descripcion_tarea">Descripción de la tarea:</label><br>
+        <textarea id="descripcion_tarea" name="descripcion_tarea"></textarea><br>
+
+        <label for="fecha_inicio">Fecha de inicio:</label><br>
+        <input type="date" id="fecha_inicio" name="fecha_inicio"><br>
+
+        <label for="fecha_finalizacion">Fecha de finalización:</label><br>
+        <input type="date" id="fecha_finalizacion" name="fecha_finalizacion"><br>
+
+        <label for="estado">Estado:</label><br>
+        <select id="estado" name="estado">
+            <option value="no iniciada">No iniciada</option>
+            <option value="finalizada">Finalizada</option>
+        </select><br>
+
+        <input type="submit" value="Agregar tarea">
+    </form>
+</body>
+</html>

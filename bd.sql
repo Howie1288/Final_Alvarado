@@ -12,6 +12,8 @@ CREATE TABLE
 CREATE TABLE aplicaciones (
         id_aplicacion serial PRIMARY KEY,
         nombre VARCHAR(255) not null
+        precio int not null,
+        situacion char (1)
     );
 
 CREATE TABLE asignacion_aplicaciones (

@@ -42,6 +42,13 @@
 
             <div class="row mb-3">
                 <div class="col">
+                    <label for="correo">Programador Situacion</label>
+                    <input type="email" name="correo" id="correo" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
                     <button type="submit" class="btn btn-primary w-100">Guardar</button>
                 </div>
             </div>

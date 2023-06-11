@@ -5,6 +5,7 @@ class Aplicacion extends Conexion
     public $id_aplicacion;
     public $nombre;
     public $precio;
+    public $situacion;
     
 
     public function __construct($args = [])
@@ -12,12 +13,13 @@ class Aplicacion extends Conexion
         $this->id_aplicacion= $args['id_aplicacion'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
         $this->precio = $args['precio'] ?? '';
+        $this->situacion = $args['situacion'] ?? '';
 
     }
 
     public function guardar()
     {
-        $sql = "INSERT INTO aplicaciones(nombre, precio) values('$this->nombre','$this->precio')";
+        $sql = "INSERT INTO aplicaciones(nombre, precio, situacion) values('$this->nombre','$this->precio', '$this->situacion')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
@@ -52,7 +54,7 @@ class Aplicacion extends Conexion
 
     public function eliminar()
     {
-        $sql = "UPDATE aplicaciones SET producto_situacion = 0 where id_aplicacion= $this->id_aplicacion";
+        $sql = "UPDATE aplicaciones SET situacion = 0 where id_aplicacion= $this->id_aplicacion";
 
         $resultado = self::ejecutar($sql);
         return $resultado;

@@ -32,6 +32,7 @@ try {
                             <th>NO. </th>
                             <th>NOMBRE</th>
                             <th>PRECIO</th>
+                            <th>SITUACION</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -43,6 +44,7 @@ try {
                                     <td><?= $key + 1 ?></td>
                                     <td><?= $aplicacion['APLICACION_NOMBRE'] ?></td>
                                     <td><?= $producto['APLICACION_PRECIO'] ?></td>
+                                    <td><?= $situacion['APLICACION_SITUACION'] ?></td>
                                     <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/aplicaciones/modificar.php?id_aplicacion=<?= $producto['ID_APLICACION'] ?>">Modificar</a></td>
                                     <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/aplicaciones/eliminar.php?id_aplicacion=<?= $producto['ID_APLICACION'] ?>">Eliminar</a></td>
                                 </tr>
