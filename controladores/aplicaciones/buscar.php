@@ -1,19 +1,25 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 require '../../modelos/Aplicacion.php';
+
 try {
     $aplicacion = new Aplicacion($_GET);
-
+    
     $aplicaciones = $aplicacion->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
-} catch (Exception $e2) {
+} catch (Exception $e2){
     $error = $e2->getMessage();
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +27,6 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Resultados</title>
 </head>
-
 <body>
     <div class="container">
         <div class="row justify-content-center">
@@ -31,27 +36,27 @@ try {
                         <tr>
                             <th>NO. </th>
                             <th>NOMBRE</th>
-                            <th>FECHA</th>
+                            <th>FECHA INICIO</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (count($aplicaciones) > 0) : ?>
-                            <?php foreach ($aplicaciones as $key => $aplicacion) : ?>
-                                <tr>
-                                    <td><?= $key + 1 ?></td>
-                                    <td><?= $aplicacion['APLICACION_NOMBRE'] ?></td>
-                                    <td><?= $aplicacion['APLICACION_FECHA_INICIO'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/aplicaciones/modificar.php?aplicacion_id=<?= $aplicaciones['APLICACION_ID'] ?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/aplicaciones/eliminar.php?aplicacion_id=<?= $aplicaciones['APLICACION_ID'] ?>">Eliminar</a></td>
-                                </tr>
-                            <?php endforeach ?>
-                        <?php else : ?>
+                        <?php if(count($aplicaciones) > 0):?>
+                        <?php foreach($aplicaciones as $key => $aplicacion) : ?>
+                        <tr>
+                            <td><?= $key + 1 ?></td>
+                            <td><?= $aplicacion['APLI_NOMBRE'] ?></td>
+                            <td><?= date('d/m/Y', strtotime($aplicacion['APLI_FECHA_INICIO'])) ?></td>
+                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/aplicaciones/modificar.php?apli_id=<?= $aplicacion['APLI_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/aplicaciones/eliminar.php?apli_id=<?= $aplicacion['APLI_ID']?>">Eliminar</a></td>
+                        </tr>
+                        <?php endforeach ?>
+                        <?php else :?>
                             <tr>
                                 <td colspan="3">NO EXISTEN REGISTROS</td>
                             </tr>
-                        <?php endif ?>
+                        <?php endif?>
                     </tbody>
                 </table>
             </div>
@@ -63,5 +68,4 @@ try {
         </div>
     </div>
 </body>
-
 </html>
