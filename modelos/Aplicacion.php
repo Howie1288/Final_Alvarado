@@ -1,4 +1,8 @@
 <?php
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 require_once 'Conexion.php';
 class Aplicacion extends Conexion
 {
@@ -18,7 +22,7 @@ class Aplicacion extends Conexion
 
     public function guardar()
     {
-        $sql = "INSERT INTO aplicaciones(aplicacion_nombre, aplicacion_fecha_inicio, aplicacion_situacion) values('$this->aplicacion_nombre','$this->aplicacion_fecha_inicio', '$this->aplicacion_situacion')";
+        $sql = "INSERT INTO aplicaciones(aplicacion_nombre, aplicacion_fecha_inicio) values('$this->aplicacion_nombre','$this->aplicacion_fecha_inicio')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }

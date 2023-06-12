@@ -2,7 +2,6 @@
 
 <?php
 require_once '../../modelos/Aplicacion.php';
-
 try {
     $aplicacion = new Aplicacion($_GET);
     $aplicacion = $aplicacion->buscar();
