@@ -7,7 +7,6 @@ class Tareas extends Conexion
     public $tarea_descripcion;
     public $tarea_estado;
     public $tarea_fecha;
-    public $tarea_situacion;
     
     public function __construct($args = [])
     {
@@ -16,13 +15,12 @@ class Tareas extends Conexion
         $this->tarea_descripcion = $args['tarea_descripcion'] ?? '';
         $this->tarea_estado = $args['tarea_estado'] ?? '';
         $this->tarea_fecha = $args['tarea_fecha'] ?? '';
-        $this->tarea_situacion = $args['tarea_situacion'] ?? '';
 
     }
 
     public function guardar()
     {
-        $sql = "INSERT INTO tareas (tarea_id_aplicacion, tarea_descripcion, tarea_estado, tarea_fecha, tarea_situacion ) values('$this->tarea_id_aplicacion', '$this->tarea_descripcion','$this->tarea_estado','$this->tarea_fecha','$this->tarea_situacion')";
+        $sql = "INSERT INTO tareas (tarea_id_aplicacion, tarea_descripcion, tarea_estado, tarea_fecha) values('$this->tarea_id_aplicacion', '$this->tarea_descripcion','$this->tarea_estado','$this->tarea_fecha')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
@@ -47,10 +45,6 @@ class Tareas extends Conexion
             $sql .= " and tarea_fecha = $this->tarea_fecha ";
         }
 
-        if ($this->tarea_situacion != '') {
-            $sql .= " and tarea_situacion = $this->tarea_situacion ";
-        }
-
         if ($this->tarea_id != null) {
             $sql .= " and tarea_id= $this->tarea_id";
         }
@@ -61,7 +55,7 @@ class Tareas extends Conexion
 
     public function modificar()
     {
-        $sql = "UPDATE tareas SET tarea_id_aplicacion = '$this->tarea_id_aplicacion', tarea_descripcion = '$this->tarea_descripcion', tarea_estado = '$this->tarea_estado', tarea_fecha = '$this->tarea_fecha', tarea_situacion = '$this->tarea_situacion' where tarea_id= $this->tarea_id";
+        $sql = "UPDATE tareas SET tarea_id_aplicacion = '$this->tarea_id_aplicacion', tarea_descripcion = '$this->tarea_descripcion', tarea_estado = '$this->tarea_estado', tarea_fecha = '$this->tarea_fecha' where tarea_id= $this->tarea_id";
 
         $resultado = self::ejecutar($sql);
         return $resultado;
