@@ -5,26 +5,27 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
+
     <div class="container">
-        <h1 class="text-center">Buscar Programador</h1>
+        <h1 class="text-center">Buscar programadores</h1>
         <div class="row justify-content-center">
             <form action="/Final_Alvarado/controladores/programadores/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="programador_grado">Grado del Programador</label>
-                        <input type="text" name="programador_grado" id="programador_grado" class="form-control">
+                        <label for="pro_grado">Grado Programador</label>
+                        <input type="text" name="pro_grado" id="pro_grado" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="programador_nombre">Nombre del programador</label>
-                        <input type="text" name="programador_nombre" id="programador_nombre" class="form-control">
+                        <label for="pro_nombre">Nombre Programador</label>
+                        <input type="text" name="pro_nombre" id="pro_nombre" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="programador_apellido">Apellido del Programador</label>
-                        <input type="text" name="programador_apellido" id="programador_apellido" class="form-control">
+                        <label for="pro_apellido">Apellido Programador</label>
+                        <input type="text" name="pro_apellido" id="pro_apellido" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
