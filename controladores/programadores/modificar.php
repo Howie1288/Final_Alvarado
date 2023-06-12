@@ -1,24 +1,23 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require '../../modelos/Programador.php';
-
-if  ( $_POST['programador_id'] != ''  &&   $_POST['programador_grado'] != '' && $_POST['programador_nombre']  != '' && $_POST['programador_apellido']  != '' && $_POST['programador_situacion'] != '' ) {
-
+if($_POST['pro_grado'] != '' &&$_POST['pro_nombre'] != '' && $_POST['pro_apellido'] != ''){
     try {
         $programador = new Programador($_POST);
         $resultado = $programador->modificar();
     } catch (PDOException $e) {
         $error = $e->getMessage();
-    } catch (Exception $e2) {
+    } catch (Exception $e2){
         $error = $e2->getMessage();
     }
-} else {
+}else{
     $error = "Debe llenar todos los datos";
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,29 +25,26 @@ if  ( $_POST['programador_id'] != ''  &&   $_POST['programador_grado'] != '' && 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Resultados</title>
 </head>
-
 <body>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <?php if ($resultado) : ?>
+                <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
                         Modificado exitosamente!
                     </div>
-                <?php else : ?>
+                <?php else :?>
                     <div class="alert alert-danger" role="alert">
                         Ocurrió un error: <?= $error ?>
                     </div>
                 <?php endif ?>
-
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/programadores/buscar.php?programador_nombre=<?= $_POST['PROGRAMADOR_NOMBRE'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/Final_Alvarado/controladores/programadores/buscar.php?pro_nombre=<?= $_POST['pro_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
 </body>
-
 </html>

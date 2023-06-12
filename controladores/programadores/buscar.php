@@ -1,9 +1,12 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require '../../modelos/Programador.php';
 try {
-    $programador = new Programador($_POST);    
-    $programador = $programador->buscar();
-
+    $programador = new Programador($_GET);
+    $programadores = $programador->buscar();
+    $error = "NO se guardó correctamente";
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2){
@@ -28,7 +31,7 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>GRADO</th>
+                            <th>GRADO </th>
                             <th>NOMBRE</th>
                             <th>APELLIDO</th>
                             <th>MODIFICAR</th>
@@ -40,16 +43,16 @@ try {
                         <?php foreach($programadores as $key => $programador) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $programador['PROGRAMADOR_GRADO'] ?></td>
-                            <td><?= $programador['PROGRAMADOR_NOMBRE'] ?></td>
-                            <td><?= $programador['PROGRAMADOR_APELLIDO'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?programador_id=<?= $programador['PROGRAMADOR_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?programador_id=<?= $programador['PROGRAMADOR_ID']?>">Eliminar</a></td>
+                            <td><?= $programador['PRO_GRADO'] ?></td>
+                            <td><?= $programador['PRO_NOMBRE'] ?></td>
+                            <td><?= $programador['PRO_APELLIDO'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?pro_id=<?= $programador['PRO_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?pro_id=<?= $programador['PRO_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
                             <tr>
-                                <td colspan="3">NO HAY REGISTROS EN EXISTENCIA</td>
+                                <td colspan="6">NO EXISTEN REGISTROS</td>
                             </tr>
                         <?php endif?>
                     </tbody>
@@ -58,7 +61,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/vistas/programadores/buscar.php" class="btn btn-info w-100">Regresar al formulario</a>
+                <a href="/Final_Alvarado/vistas/programadores/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
