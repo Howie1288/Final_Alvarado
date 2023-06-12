@@ -6,14 +6,14 @@
         <form action="/Final_Alvarado/controladores/aplicaciones/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="aplicacion_nombre">Nombre de la Aplicacion</label>
-                    <input type="text" name="aplicacion_nombre" id="aplicacion_nombre" class="form-control">
+                    <label for="nombre">Nombre de la Aplicacion</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="aplicacion_fecha_inicio">Fecha inicio de la Aplicacion</label>
-                    <input type="date"  name="aplicacion_fecha_inicio" id="aplicacion_fecha_inicio" class="form-control">
+                    <label for="precio">Precio de la Aplicacion</label>
+                    <input type="number"  name="precio" id="precio" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">

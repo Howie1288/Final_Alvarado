@@ -8,31 +8,31 @@
             <div class="row mb-3">
                 <div class="col">
                     <label for="nombre">Nombre de la Tarea</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control">
+                    <input type="text" name="nombre_tarea" id="nombre" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
                     <label for="aplicacion">ID Aplicacion</label>
-                    <input type="number" name="aplicacion" id="aplicacion" class="form-control">
+                    <input type="number" name="id_aplicacion" id="aplicacion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text" name="descripcion" id="descripcion" class="form-control">
+                    <input type="text" name="descripcion_tarea" id="descripcion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
                     <label for="fechainicio">Fecha Inicio</label>
-                    <input type="date" name="fechainicio" id="fechainicio" class="form-control">
+                    <input type="date" name="fecha_inicio" id="fechainicio" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
                     <label for="fechafinalizacion">Fecha Finalizacion</label>
-                    <input type="date" name="fechafinalizacion" id="fechafinalizacion" class="form-control">
+                    <input type="date" name="fecha_finalizacion" id="fechafinalizacion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">

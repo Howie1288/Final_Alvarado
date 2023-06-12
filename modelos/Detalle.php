@@ -3,18 +3,18 @@ require_once 'Conexion.php';
 class Detalle extends Conexion
 {
     public $detalle_id;
-    public $detalle_venta;
-    public $detalle_producto;
-    public $detalle_cantidad;
-    public $detalle_situacion;
+    public $detalle_aplicacion;
+    public $detalle_tarea;
+    public $detalle_programador;
+    public $detalle_estado;
 
     public function __construct($args = [])
     {
         $this->detalle_id = $args['detalle_id'] ?? null;
-        $this->detalle_venta = $args['detalle_venta'] ?? '';
-        $this->detalle_producto = $args['detalle_producto'] ?? '';
-        $this->detalle_cantidad = $args['detalle_cantidad'] ?? '';
-        $this->detalle_situacion = $args['detalle_situacion'] ?? '';
+        $this->detalle_aplicacion = $args['detalle_aplicacion'] ?? '';
+        $this->detalle_tarea = $args['detalle_tarea'] ?? '';
+        $this->detalle_programador = $args['detalle_programador'] ?? '';
+        $this->detalle_estado = $args['detalle_estado'] ?? '';
     }
 
     public function guardar()

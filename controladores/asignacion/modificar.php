@@ -1,7 +1,7 @@
 <?php
 require '../../modelos/Aplicacion.php';
 
-if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_fecha_inicio']  != '' && $_POST['aplicacion_situacion']  !=  '' && $_POST['id_aplicacion'] != '') {
+if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_precio']  != '' && $_POST['id_aplicacion'] != '') {
 
     try {
         $aplicacion = new Aplicacion($_POST);

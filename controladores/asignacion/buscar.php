@@ -1,13 +1,9 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-require_once '../../modelos/Venta.php';
+require '../../modelos/Aplicacion.php';
 try {
-    $_GET['venta_fecha'] = $_GET['venta_fecha'] != '' ? date('Y-m-d', strtotime($_GET['venta_fecha'])) : '';
-    $venta = new Venta($_GET);
+    $aplicacion = new Aplicacion($_GET);
 
-    $ventas = $venta->buscar();
+    $aplicaciones = $aplicacion->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -23,7 +19,7 @@ try {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultado de ventas</title>
+    <title>Resultados</title>
 </head>
 
 <body>
@@ -34,24 +30,28 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>CLIENTE</th>
-                            <th>FECHA</th>
-                            <th>DETALLE</th>
+                            <th>NOMBRE</th>
+                            <th>PRECIO</th>
+                            <th>SITUACION</th>
+                            <th>MODIFICAR</th>
+                            <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (count($ventas) > 0) : ?>
-                            <?php foreach ($ventas as $key => $venta) : ?>
+                        <?php if (count($aplicaciones) > 0) : ?>
+                            <?php foreach ($aplicaciones as $key => $aplicacion) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $venta['CLIENTE_NOMBRE'] ?></td>
-                                    <td><?= $venta['VENTA_FECHA'] ?></td>
-                                    <td><a class="btn btn-info w-100" href="/Final_Alvarado/vistas/ventas/factura.php?venta_id=<?= $venta['VENTA_ID'] ?>">VER DETALLE</a></td>
+                                    <td><?= $aplicacion['APLICACION_NOMBRE'] ?></td>
+                                    <td><?= $producto['APLICACION_PRECIO'] ?></td>
+                                    <td><?= $situacion['APLICACION_SITUACION'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/aplicaciones/modificar.php?id_aplicacion=<?= $producto['ID_APLICACION'] ?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/aplicaciones/eliminar.php?id_aplicacion=<?= $producto['ID_APLICACION'] ?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
                             <tr>
-                                <td colspan="4">NO EXISTEN REGISTROS</td>
+                                <td colspan="3">NO EXISTEN REGISTROS</td>
                             </tr>
                         <?php endif ?>
                     </tbody>
@@ -60,7 +60,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/vistas/ventas/buscar.php" class="btn btn-info w-100">Regresar al formulario</a>
+                <a href="/Final_Alvarado/vistas/aplicaciones/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

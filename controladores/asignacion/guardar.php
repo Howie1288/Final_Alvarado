@@ -1,18 +1,20 @@
 <?php
 require '../../modelos/Aplicacion.php';
 
-if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_fecha_inicio']  != '' && $_POST['aplicacion_situacion']  !=  '' && $_POST['id_aplicacion'] != '') {
+
+if ($_POST['nombre'] != '' && $_POST['precio'] != ''  && $_POST['situacion'] != '') {
 
     try {
         $aplicacion = new Aplicacion($_POST);
-        $resultado = $aplicacion->modificar();
+        $resultado = $aplicacion->guardar();
+        $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2) {
         $error = $e2->getMessage();
     }
 } else {
-    $error = "Debe llenar todos los datos en los campos";
+    $error = "Debe llenar todos los datos";
 }
 
 ?>
@@ -33,7 +35,7 @@ if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_fecha_inicio']  != '
             <div class="col-lg-6">
                 <?php if ($resultado) : ?>
                     <div class="alert alert-success" role="alert">
-                        Modificado exitosamente!
+                       !! Guardado exitosamente !!
                     </div>
                 <?php else : ?>
                     <div class="alert alert-danger" role="alert">
@@ -45,7 +47,7 @@ if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_fecha_inicio']  != '
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/aplicaciones/buscar.php?ombre=<?= $_POST['nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/Final_Alvarado/vistas/aplicaciones/index.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>

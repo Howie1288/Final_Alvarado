@@ -2,41 +2,41 @@
 require_once 'Conexion.php';
 class Aplicacion extends Conexion
 {
-    public $id_aplicacion;
-    public $nombre;
-    public $precio;
-    public $situacion;
+    public $aplicacion_id;
+    public $aplicacion_nombre;
+    public $aplicacion_fecha_inicio;
+    public $aplicacion_situacion;
     
     public function __construct($args = [])
     {
-        $this->id_aplicacion= $args['id_aplicacion'] ?? null;
-        $this->nombre = $args['nombre'] ?? '';
-        $this->precio = $args['precio'] ?? '';
-        $this->situacion = $args['situacion'] ?? '';
+        $this->aplicacion_id= $args['aplicacion_id'] ?? null;
+        $this->aplicacion_nombre = $args['aplicacion_nombre'] ?? '';
+        $this->aplicacion_fecha_inicio = $args['aplicacion_fecha_inicio'] ?? '';
+        $this->aplicacion_situacion = $args['aplicacion_situacion'] ?? '';
 
     }
 
     public function guardar()
     {
-        $sql = "INSERT INTO aplicaciones(nombre, precio, situacion) values('$this->nombre','$this->precio', '$this->situacion')";
+        $sql = "INSERT INTO aplicaciones(aplicacion_nombre, aplicacion_fecha_inicio, aplicacion_situacion) values('$this->aplicacion_nombre','$this->aplicacion_fecha_inicio', '$this->aplicacion_situacion')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar()
     {
-        $sql = "SELECT * from aplicaciones where situacion = 1 ";
+        $sql = "SELECT * from aplicaciones where aplicacion_situacion = 1 ";
 
-        if ($this->nombre != '') {
-            $sql .= " and nombre like '%$this->nombre%' ";
+        if ($this->aplicacion_nombre != '') {
+            $sql .= " and aplicacion_nombre like '%$this->aplicacion_nombre%' ";
         }
 
-        if ($this->precio != '') {
-            $sql .= " and precio = $this->precio ";
+        if ($this->aplicacion_fecha_inicio != '') {
+            $sql .= " and aplicacion_fecha_inicio = $this->aplicacion_fecha_inicio ";
         }
 
-        if ($this->id_aplicacion!= null) {
-            $sql .= " and id_aplicacion= $this->id_aplicacion";
+        if ($this->aplicacion_id!= null) {
+            $sql .= " and aplicacion_id= $this->aplicacion_id";
         }
 
         $resultado = self::servir($sql);
@@ -45,7 +45,7 @@ class Aplicacion extends Conexion
 
     public function modificar()
     {
-        $sql = "UPDATE aplicaciones SET nombre = '$this->nombre', precio = $this->precio where id_aplicacion= $this->id_aplicacion";
+        $sql = "UPDATE aplicaciones SET aplicacion_nombre = '$this->aplicacion_nombre', aplicacion_fecha_inicio = $this->aplicacion_fecha_inicio where aplicacion_id= $this->aplicacion_id";
 
         $resultado = self::ejecutar($sql);
         return $resultado;
@@ -53,7 +53,7 @@ class Aplicacion extends Conexion
 
     public function eliminar()
     {
-        $sql = "UPDATE aplicaciones SET situacion = 0 where id_aplicacion= $this->id_aplicacion";
+        $sql = "UPDATE aplicaciones SET aplicacion_situacion = 0 where aplicacion_id= $this->aplicacion_id";
 
         $resultado = self::ejecutar($sql);
         return $resultado;

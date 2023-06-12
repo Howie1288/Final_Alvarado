@@ -1,11 +1,11 @@
 <?php
-require_once '../../modelos/Cliente.php';
-require_once '../../modelos/Producto.php';
+require_once '../../modelos/Aplicacion.php';
+require_once '../../modelos/Programador.php';
     try {
-        $cliente = new Cliente();
-        $producto = new Producto();
-        $clientes = $cliente->buscar();
-        $productos = $producto->buscar();
+        $aplicacion = new Aplicacion();
+        $programador = new Programador();
+        $aplicaciones = $aplicacion->buscar();
+        $programadores = $programador->buscar();
         
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -18,23 +18,23 @@ require_once '../../modelos/Producto.php';
     <div class="container">
         <h1 class="text-center">Formulario de búsqueda de ventas</h1>
         <div class="row justify-content-center">
-            <form action="/Final_Alvarado/controladores/ventas/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/Final_Alvarado/controladores/aplicaciones/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="venta_cliente">Cliente</label>
-                        <select name="venta_cliente" id="venta_cliente" class="form-control">
+                        <label for="aplicaciones">Aplicaciones</label>
+                        <select name="aplicaciones" id="aplicaciones" class="form-control">
                             <option value="">SELECCIONE...</option>
-                            <?php foreach ($clientes as $key => $cliente) : ?>
-                                <option value="<?= $cliente['CLIENTE_ID'] ?>"><?= $cliente['CLIENTE_NOMBRE'] ?></option>
+                            <?php foreach ($aplicaiones as $key => $aplicacion) : ?>
+                                <option value="<?= $aplicacion['id_aplicacion'] ?>"><?= $aplicacion['nombre'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="venta_fecha">Fecha de la venta</label>
+                        <label for="fecha">Fecha de la Inicio</label>
                         <!--   PARA QUE LA HORA SE IMPRIMA EL EL FOMATO SOLICITADO -->
-                        <input type="datetime-local" value="<?= date('Y-m-d H:i') ?>" name="venta_fecha" id="venta_fecha" class="form-control">
+                        <input type="datetime-local" value="<?= date('Y-m-d H:i') ?>" name="fecha" id="fecha" class="form-control">
                     </div>
                 </div>
                

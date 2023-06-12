@@ -11,17 +11,11 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Ventas
+                        Asignacion Aplicaciones
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Final_Alvarado/vistas/ventas/index.php">Ingresar venta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Final_Alvarado/vistas/ventas/buscar.php">Buscar venta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Final_Alvarado/controladores/ventas/detalle_ventas.php">Detalle de venta</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/asignacion/index.php">Asignar Aplicaciones</a>
                         </li>
                     </ul>
                 </li>
