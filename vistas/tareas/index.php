@@ -29,7 +29,7 @@ try {
                     <label for="tarea_id_aplicacion"> ID Aplicación</label>
                     <select name="tarea_id_aplicacion" id="tarea_id_aplicacion" class="form-control">
                         <option value="">SELECCIONE...</option>
-                        <?php foreach ($aplicaciones as $key => $aplicacion) : ?>
+                        <?php foreach ($aplicaciones as $key => $Aplicacion) : ?>
                             <option value="<?= $aplicacion['APLICACION_ID'] ?>"><?= $aplicacion['APLICACION_NOMBRE'] ?></option>
                         <?php endforeach?>
                     </select>
