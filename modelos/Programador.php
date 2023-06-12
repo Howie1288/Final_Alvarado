@@ -14,7 +14,7 @@ class Programador extends Conexion
         $this->programador_id = $args['programador_id'] ?? null;
         $this->programador_grado = $args['programador_grado'] ?? '';
         $this->programador_nombre = $args['programador_nombre'] ?? '';
-        $this-> programador_apellido = $args[' programador_apellido'] ?? '';
+        $this-> programador_apellido = $args['programador_apellido'] ?? '';
         $this->programador_situacion = $args['programador_situacion'] ?? '';
     }
 

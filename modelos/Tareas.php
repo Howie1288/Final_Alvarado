@@ -1,30 +1,28 @@
 <?php
 require_once 'Conexion.php';
-class Tarea extends Conexion
+class Tareas extends Conexion
 {
     public $tarea_id;
-    public $nombre_tarea;
-    public $id_aplicacion;
-    public $descripcion_tarea;
-    public $fecha_inicio;
-    public $fecha_finalizacion;
-    public $estado;
+    public $tarea_id_aplicacion;
+    public $tarea_descripcion;
+    public $tarea_estado;
+    public $tarea_fecha;
+    public $tarea_situacion;
     
     public function __construct($args = [])
     {
         $this->tarea_id= $args['tarea_id'] ?? null;
-        $this->nombre_tarea = $args['nombre_tarea'] ?? '';
-        $this->id_aplicacion = $args['id_aplicacion'] ?? '';
-        $this->descripcion_tarea = $args['descripcion_tarea'] ?? '';
-        $this->fecha_inicio = $args['fecha_inicio'] ?? '';
-        $this->fecha_finalizacion = $args['fecha_finalizacion'] ?? '';
-        $this->estado = $args['estado'] ?? '';
+        $this->tarea_id_aplicacion = $args['tarea_id_aplicacion'] ?? '';
+        $this->tarea_descripcion = $args['tarea_descripcion'] ?? '';
+        $this->tarea_estado = $args['tarea_estado'] ?? '';
+        $this->tarea_fecha = $args['tarea_fecha'] ?? '';
+        $this->tarea_situacion = $args['tarea_situacion'] ?? '';
 
     }
 
     public function guardar()
     {
-        $sql = "INSERT INTO tareas (nombre_tarea, id_aplicacion, descripcion_tarea, fecha_inicio, fecha_finalizacion, estado ) values('$this->nombre_tarea','$this->id_aplicacion','$this->descripcion_tarea','$this->fecha_inicio','$this->fecha_finalizacion','$this->estado')";
+        $sql = "INSERT INTO tareas (tarea_id_aplicacion, tarea_descripcion, tarea_estado, tarea_fecha, tarea_situacion ) values('$this->tarea_id_aplicacion', '$this->tarea_descripcion','$this->tarea_estado','$this->tarea_fecha','$this->tarea_situacion')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
@@ -33,31 +31,27 @@ class Tarea extends Conexion
     {
         $sql = "SELECT * from tareas where estado = 1 ";
 
-        if ($this->nombre_tarea != '') {
-            $sql .= " and nombre_tarea like '%$this->nombre_tarea%' ";
+        if ($this->tarea_id_aplicacion != '') {
+            $sql .= " and tarea_id_aplicacion like '%$this->tarea_id_aplicacion%' ";
         }
 
-        if ($this->id_aplicacion != '') {
-            $sql .= " and id_aplicacion = $this->id_aplicacion ";
+        if ($this->tarea_descripcion != '') {
+            $sql .= " and tarea_descripcion = $this->tarea_descripcion ";
         }
 
-        if ($this->descripcion_tarea != '') {
-            $sql .= " and descripcion_tarea = $this->descripcion_tarea ";
+        if ($this->tarea_estado != '') {
+            $sql .= " and tarea_estado = $this->tarea_estado ";
         }
 
-        if ($this->fecha_inicio != '') {
-            $sql .= " and fecha_inicio = $this->fecha_inicio ";
+        if ($this->tarea_fecha != '') {
+            $sql .= " and tarea_fecha = $this->tarea_fecha ";
         }
 
-        if ($this->fecha_finalizacion != '') {
-            $sql .= " and fecha_finalizacion = $this->fecha_finalizacion ";
+        if ($this->tarea_situacion != '') {
+            $sql .= " and tarea_situacion = $this->tarea_situacion ";
         }
 
-        if ($this->estado != '') {
-            $sql .= " and estado = $this->estado ";
-        }
-
-        if ($this->tarea_id!= null) {
+        if ($this->tarea_id != null) {
             $sql .= " and tarea_id= $this->tarea_id";
         }
 
@@ -67,7 +61,7 @@ class Tarea extends Conexion
 
     public function modificar()
     {
-        $sql = "UPDATE tareas SET nombre_tarea = '$this->nombre_tarea', id_aplicacion = '$this->id_aplicacion', descripcion_tarea = '$this->descripcion_tarea', fecha_inicio = '$this->fecha_inicio', fecha_finalizacion = '$this->fecha_finalizacion', estado = '$this->estado',where tarea_id= $this->tarea_id";
+        $sql = "UPDATE tareas SET tarea_id_aplicacion = '$this->tarea_id_aplicacion', tarea_descripcion = '$this->tarea_descripcion', tarea_estado = '$this->tarea_estado', tarea_fecha = '$this->tarea_fecha', tarea_situacion = '$this->tarea_situacion' where tarea_id= $this->tarea_id";
 
         $resultado = self::ejecutar($sql);
         return $resultado;

@@ -1,10 +1,7 @@
 <?php
 require '../../modelos/Programador.php';
 
-
-if ($_POST['programador_grado'] != '' && $_POST['programador_nombre'] != '' && $_POST['programador_apellido'] != '' && $_POST['programador_situacion'] != '' && $_POST['programador_id'] ) {
-
-
+if ($_POST['programador_grado'] != '' && $_POST['programador_nombre'] != '' && $_POST['programador_apellido'] != '' && $_POST['programador_situacion'] != '' && $_POST['programador_id'] != '') {
 
     try {
         $programador = new Programador($_POST);
@@ -18,8 +15,6 @@ if ($_POST['programador_grado'] != '' && $_POST['programador_nombre'] != '' && $
 } else {
     $error = "Debe llenar todos los datos";
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">

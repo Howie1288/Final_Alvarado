@@ -3,7 +3,7 @@ require '../../modelos/Tarea.php';
 
 
 try {
-    $tarea = new Tarea($_GET);
+    $tarea = new Tareas($_GET);
     $resultado = $tarea->eliminar();
 } catch (PDOException $e) {
     $error = $e->getMessage();

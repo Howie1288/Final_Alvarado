@@ -7,38 +7,27 @@
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="nombre">Nombre de la Tarea</label>
-                    <input type="text" name="nombre_tarea" id="nombre" class="form-control">
+                    <label for="tarea_id_aplicacion">ID APLICACION</label>
+                    <input type="number" name="tarea_id_aplicacion" id="tarea_id_aplicacion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="aplicacion">ID Aplicacion</label>
-                    <input type="number" name="id_aplicacion" id="aplicacion" class="form-control">
+                    <label for="tarea_descripcion">DESCRIPCION</label>
+                    <input type="text" name="tarea_descripcion" id="tarea_descripcion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="descripcion">Descripcion</label>
-                    <input type="text" name="descripcion_tarea" id="descripcion" class="form-control">
+                    <label for="tarea_fecha">FECHA DE INICIO</label>
+                    <input type="date" name="tarea_fecha" id="tarea_fecha" class="form-control">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <div class="col">
-                    <label for="fechainicio">Fecha Inicio</label>
-                    <input type="date" name="fecha_inicio" id="fechainicio" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="fechafinalizacion">Fecha Finalizacion</label>
-                    <input type="date" name="fecha_finalizacion" id="fechafinalizacion" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="estado">Estado</label>
-                    <input type="text" name="estado" id="estado" class="form-control">
+                    <label for="tarea_estado">ESTADO</label>
+                    <input type="text" name="tarea_estado" id="tarea_estado" class="form-control">
                 </div>
             </div>
 

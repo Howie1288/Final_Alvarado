@@ -2,10 +2,10 @@
 require '../../modelos/Tareas.php';
 
 
-if ($_POST['nombre_tarea'] != '' && $_POST['id_aplicacion'] != ''  && $_POST['descripcion_tarea'] != ''  && $_POST['fecha_inicio'] != ''  && $_POST['fecha_finalizacion'] != ''  && $_POST['estado']) {
+if ($_POST['tarea_id_aplicacion'] != '' && $_POST['tarea_descripcion'] != ''  && $_POST['tarea_estado'] != ''  && $_POST['tarea_fecha'] != ''  && $_POST['tarea_situacion'] ) {
 
     try {
-        $tarea = new Tarea($_POST);
+        $tarea = new Tareas($_POST);
         $resultado = $tarea->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {

@@ -6,44 +6,37 @@
         <form action="/Final_Alvarado/controladores/tareas/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="nombre">Nombre de la Tarea</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control">
+                    <label for="tarea_id_aplicacion">ID APLICACION</label>
+                    <input type="number" name="tarea_id_aplicacion" id="tarea_id_aplicacion" class="form-control">
                 </div>
             </div>
 
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="aplicacion_precio">ID Aplicacion</label>
-                    <input type="number" step="0.01" min="0" name="aplicacion_precio" id="aplicacion_precio" class="form-control">
+                    <label for="tarea_descripcion">DESCRIPCION</label>
+                    <input type="text" step="0.01" min="0" name="tarea_descripcion" id="tarea_descripcion" class="form-control">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="nombre">Descripcion</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control">
+                    <label for=" tarea_estado">ESTADO</label>
+                    <input type="text" name=" tarea_estado" id=" tarea_estado" class="form-control">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="fechainicio">Fecha Inicio</label>
-                    <input type="date" name="fechainicio" id="fechainicio" class="form-control">
+                    <label for="tarea_fecha">Fecha Inicio</label>
+                    <input type="date" name="tarea_fecha" id="tarea_fecha" class="form-control">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="fechafinalizacion">Fecha Finalizacion</label>
-                    <input type="date" name="fechafinalizacion" id="fechafinalizacion" class="form-control">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="estado">Estado</label>
-                    <input type="text" name="estado" id="estado" class="form-control">
+                    <label for="tarea_situacion">SITUACION</label>
+                    <input type="text" name="tarea_situacion" id="tarea_situacion" class="form-control">
                 </div>
             </div>
 

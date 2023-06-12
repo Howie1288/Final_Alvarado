@@ -1,7 +1,7 @@
 <?php
 require '../../modelos/Tareas.php';
 try {
-    $tarea = new Tarea($_GET);
+    $tarea = new Tareas($_GET);
 
     $tareas = $tarea->buscar();
 } catch (PDOException $e) {
@@ -30,12 +30,11 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>NOMBRE</th>
-                            <th>ID_APLICACION</th>
-                            <th>DESCRIPCION</th>
-                            <th>FECHA INICIO</th>
-                            <th>FECHA FINALIZACION</th>
-                            <th>ESTADO</th>
+                            <th>tarea_id_aplicacion</th>
+                            <th>tarea_descripcion</th>
+                            <th>tarea_estado</th>
+                            <th>tarea_fecha</th>
+                            <th>tarea_situacion</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -45,14 +44,13 @@ try {
                             <?php foreach ($tareas as $key => $tarea) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $tarea['NOMBRE'] ?></td>
-                                    <td><?= $tarea['ID_APLICACION'] ?></td>
-                                    <td><?= $tarea['DESCRIPCION'] ?></td>
-                                    <td><?= $tarea['FECHA INICIO'] ?></td>
-                                    <td><?= $tarea['FECHA FINALIZACION'] ?></td>
-                                    <td><?= $tarea['ESTADO'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/tareas/modificar.php?tarea_id=<?= $producto['TAREA_ID'] ?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/tareas/eliminar.php?tarea_id=<?= $producto['TAREA_ID'] ?>">Eliminar</a></td>
+                                    <td><?= $tarea['tarea_id_aplicacion'] ?></td>
+                                    <td><?= $tarea['tarea_descripcion'] ?></td>
+                                    <td><?= $tarea['tarea_estado'] ?></td>
+                                    <td><?= $tarea['tarea_fecha'] ?></td>
+                                    <td><?= $tarea['tarea_situacion'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/tareas/modificar.php?tarea_id=<?= $tarea ['TAREA_ID'] ?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/tareas/eliminar.php?tarea_id=<?= $tarea ['TAREA_ID'] ?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
