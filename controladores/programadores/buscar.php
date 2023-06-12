@@ -45,8 +45,8 @@ try {
                             <td><?= $programador['NOMBRE'] ?></td>
                             <td><?= $programador['APELLIDO'] ?></td>
                             <td><?= $programador['SITUACION'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?programador_id=<?= $programador['programador_id']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?programador_id=<?= $programador['programador_id']?>">Eliminar</a></td>
+                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?programador_id=<?= $programador['PROGRAMADOR_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?programador_id=<?= $programador['PROGRAMADOR_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
