@@ -28,8 +28,10 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
+                            <th>GRADO</th>
                             <th>NOMBRE</th>
                             <th>APELLIDO</th>
+                            <th>SITUACION</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -39,10 +41,12 @@ try {
                         <?php foreach($programadores as $key => $programador) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
+                            <td><?= $programador['GRADO'] ?></td>
                             <td><?= $programador['NOMBRE'] ?></td>
                             <td><?= $programador['APELLIDO'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?id_programador=<?= $programador['id_programador']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?id_programador=<?= $programador['id_programador']?>">Eliminar</a></td>
+                            <td><?= $programador['SITUACION'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?programador_id=<?= $programador['programador_id']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?programador_id=<?= $programador['programador_id']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>

@@ -2,7 +2,7 @@
 require '../../modelos/Programador.php';
 
 
-if ($_POST['nombre'] != '' && $_POST['apellido'] != '') {
+if ($_POST['programador_grado'] != '' && $_POST['programador_nombre'] != '' && $_POST['programador_apellido'] != '' && $_POST['programador_situacion'] != '' && $_POST['programador_id'] ) {
 
 
 

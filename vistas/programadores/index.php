@@ -22,7 +22,7 @@
             <div class="row mb-3">
                 <div class="col">
                     <label for="programador_apellido">Apellidos del programador</label>
-                    <input type="number" name="programador_apellido" id="programador_apellido" class="form-control">
+                    <input type="text" name="programador_apellido" id="programador_apellido" class="form-control">
                 </div>
             </div>
 

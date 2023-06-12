@@ -1,7 +1,7 @@
 <?php
 require '../../modelos/Programador.php';
 
-if ($_POST['nombre'] != '' && $_POST['apellido']  != '' && $_POST['id_programador'] != '') {
+if ($_POST['programador_grado'] != '' && $_POST['programador_nombre']  != '' && $_POST['programador_apellido']  != '' && $_POST['programador_situacion'] != '' && $_POST['programador_id'] != '') {
 
     try {
         $programador = new Programador($_POST);

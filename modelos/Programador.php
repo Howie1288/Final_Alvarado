@@ -3,26 +3,24 @@ require_once 'Conexion.php';
 
 class Programador extends Conexion
 {
-    public $id_programador;
-    public $nombre;
-    public $apellido;
-    public $telefono;
-    public $direccion;
-    public $correo_electronico;
+    public $programador_id;
+    public $programador_grado;
+    public $programador_nombre;
+    public $programador_apellido;
+    public $programador_situacion;
 
     public function __construct($args = [])
     {
-        $this->id_programador = $args['id_programador'] ?? null;
-        $this->nombre = $args['nombre'] ?? '';
-        $this->apellido = $args['apellido'] ?? '';
-        $this->telefono = $args['telefono'] ?? '';
-        $this->direccion = $args['direccion'] ?? '';
-        $this->correo_electronico = $args['correo_electronico'] ?? '';
+        $this->programador_id = $args['programador_id'] ?? null;
+        $this->programador_grado = $args['programador_grado'] ?? '';
+        $this->programador_nombre = $args['programador_nombre'] ?? '';
+        $this-> programador_apellido = $args[' programador_apellido'] ?? '';
+        $this->programador_situacion = $args['programador_situacion'] ?? '';
     }
 
     public function guardar()
     {
-        $sql = "INSERT INTO programadores(nombre, apellido, telefono, direccion, correo_electronico) values('$this->nombre','$this->apellido', '$this->telefono', '$this->direccion', '$this->correo_electronico')";
+        $sql = "INSERT INTO programadores(programador_grado, programador_nombre,  programador_apellido, programador_situacion, ) values('$this->programador_grado','$this->programador_nombre', '$this-> programador_apellido', '$this->programador_situacion')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
@@ -31,29 +29,24 @@ class Programador extends Conexion
     {
         $sql = "SELECT * from programadores where situacion = 1 ";
 
-        if ($this->nombre != '') {
-            $sql .= " and nombre like '%$this->nombre%' ";
+        if ($this->programador_grado != '') {
+            $sql .= " and programador_grado like '%$this->programador_grado%' ";
         }
 
-        if ($this->apellido != '') {
-            $sql .= " and apellido = $this->apellido ";
+        if ($this->programador_nombre != '') {
+            $sql .= " and programador_nombre = $this->programador_nombre ";
         }
 
-        if ($this->telefono != '') {
-            $sql .= " and telefono = $this->telefono ";
+        if ($this-> programador_apellido != '') {
+            $sql .= " and  programador_apellido = $this-> programador_apellido ";
         }
 
-        if ($this->direccion != '') {
-            $sql .= " and direccion = $this->direccion ";
+        if ($this->programador_situacion != '') {
+            $sql .= " and programador_situacion = $this->programador_situacion ";
         }
 
-        if ($this->correo_electronico != '') {
-            $sql .= " and correo_electronico = $this->correo_electronico ";
-        }
-
-
-        if ($this->id_programador != null) {
-            $sql .= " and id_programador = $this->id_programador ";
+        if ($this->programador_id != null) {
+            $sql .= " and programador_id = $this->programador_id ";
         }
 
         $resultado = self::servir($sql);
@@ -62,7 +55,7 @@ class Programador extends Conexion
 
     public function modificar()
     {
-        $sql = "UPDATE programadores SET nombre = '$this->nombre', apellido = $this->apellido where id_programador = $this->id_programador";
+        $sql = "UPDATE programadores SET programador_grado = '$this->programador_grado', programador_nombre = $this->programador_nombre, programador_apellido = $this->programador_apellido, programador_situacion = $this->programador_situacion where programador_id = $this->programador_id";
 
         $resultado = self::ejecutar($sql);
         return $resultado;
@@ -70,7 +63,7 @@ class Programador extends Conexion
 
     public function eliminar()
     {
-        $sql = "UPDATE programadores SET situacion = 1 where id_programador = $this->id_programador";
+        $sql = "UPDATE programadores SET situacion = 1 where programador_id = $this->programador_id";
 
         $resultado = self::ejecutar($sql);
         return $resultado;
