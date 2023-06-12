@@ -45,7 +45,7 @@ if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_fecha_inicio']  != '
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/aplicaciones/buscar.php?ombre=<?= $_POST['nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/Final_Alvarado/controladores/aplicaciones/buscar.php?ombre=<?= $_POST['aplicacion_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
