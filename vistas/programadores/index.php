@@ -6,44 +6,30 @@
         <form action="/Final_Alvarado/controladores/Programadores/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="nombre">Nombre del programador</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control">
+                    <label for="programador_grado">Grado Militar del programador</label>
+                    <input type="text" name="programador_grado" id="programador_grado" class="form-control">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="apellido">Apellido del programador</label>
-                    <input type="text" name="apellido" id="apellido" class="form-control">
+                    <label for="programador_nombre">Nombre del Programador</label>
+                    <input type="text" name="programador_nombre" id="programador_nombre" class="form-control">
                 </div>
             </div>
 
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="telefono">Telefono del programador</label>
-                    <input type="number" name="telefono" id="telefono" class="form-control">
+                    <label for="programador_apellido">Apellidos del programador</label>
+                    <input type="number" name="programador_apellido" id="programador_apellido" class="form-control">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="direccion">Direccion del programador</label>
-                    <input type="text" name="direccion" id="direccion" class="form-control">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="correo">Correo Electronico</label>
-                    <input type="email" name="correo" id="correo" class="form-control">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="correo">Programador Situacion</label>
-                    <input type="email" name="correo" id="correo" class="form-control">
+                    <label for="programador_situacion">Situacion del Programador</label>
+                    <input type="text" name="programador_situacion" id="programador_situacion" class="form-control">
                 </div>
             </div>
 

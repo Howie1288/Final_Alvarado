@@ -1,27 +1,35 @@
-<?php include_once '../../includes/header.php'?>
-<?php include_once '../../includes/navbar.php'?>
-    <div class="container">
-        <h1 class="text-center">Buscar Programador</h1>
-        <div class="row justify-content-center">
-            <form action="/Final_Alvarado/controladores/programadores/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="nombre">Nombre del programador</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" required>
-                    </div>
+<?php include_once '../../includes/header.php' ?>
+<?php include_once '../../includes/navbar.php' ?>
+<div class="container">
+    <h1 class="text-center">Buscar Programador</h1>
+    <div class="row justify-content-center">
+        <form action="/Final_Alvarado/controladores/programadores/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="programador_grado">Grado del programador</label>
+                    <input type="text" name="programador_grado" id="programador_grado" class="form-control" required>
                 </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="apellido">Apellido del programador</label>
-                        <input type="text" name="apellido" id="apellido" class="form-control">
-                    </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="programador_nombre">Nombre del programador</label>
+                    <input type="text" name="programador_nombre" id="programador_nombre" class="form-control">
                 </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <button type="submit" class="btn btn-info w-100">Buscar</button>
-                    </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="programador_apellido">Apellido del programador</label>
+                    <input type="text" name="programador_apellido" id="programador_apellido" class="form-control">
                 </div>
-            </form>
-        </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <button type="submit" class="btn btn-info w-100">Buscar</button>
+                </div>
+            </div>
+        </form>
     </div>
-    <?php include_once '../../includes/footer.php'?>
+</div>
+<?php include_once '../../includes/footer.php' ?>
