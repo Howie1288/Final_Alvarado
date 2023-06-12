@@ -32,7 +32,7 @@ try {
             <div class="row mb-3">
                 <div class="col">
                     <label for="aplicacion_situacion">Situacion de Aplicacion</label>
-                    <input type="date" step="0.01" min="0" name="aplicacion_situacion" id="aplicacion_situacion" class="form-control" value="<?= $aplicaciones[0]['aplicacion_situacion'] ?>">
+                    <input type="text" step="0.01" min="0" name="aplicacion_situacion" id="aplicacion_situacion" class="form-control" value="<?= $aplicaciones[0]['aplicacion_situacion'] ?>">
                 </div>
             </div>
 
