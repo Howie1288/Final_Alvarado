@@ -61,7 +61,7 @@
                             <a class="nav-link" href="/Final_Alvarado/vistas/tareas/index.php">Crear Tareas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Final_Alvarado/vistas/Tareas/buscar.php">Buscar Tareas</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/tareas/buscar.php">Buscar Tareas</a>
                         </li>
                     </ul>
                 </li>

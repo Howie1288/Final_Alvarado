@@ -12,8 +12,8 @@
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="aplicacion_precio">Precio de la Aplicacion</label>
-                    <input type="number" step="0.01" min="0" name="aplicacion_precio" id="aplicacion_precio" class="form-control">
+                    <label for="precio">Precio de la Aplicacion</label>
+                    <input type="number"  name="precio" id="precio" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">

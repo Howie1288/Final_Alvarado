@@ -1,8 +1,7 @@
 <?php
 require '../../modelos/Programador.php';
 try {
-    $programador = new Programador ($_GET);
-    
+    $programador = new Programador($_POST);    
     $programador = $programador->buscar();
 
 } catch (PDOException $e) {
@@ -40,8 +39,8 @@ try {
                         <?php foreach($programadores as $key => $programador) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $programador['programador_NOMBRE'] ?></td>
-                            <td><?= $programador['programador_APELLIDO'] ?></td>
+                            <td><?= $programador['NOMBRE'] ?></td>
+                            <td><?= $programador['APELLIDO'] ?></td>
                             <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/programadores/modificar.php?id_programador=<?= $programador['id_programador']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/programadores/eliminar.php?id_programador=<?= $programador['id_programador']?>">Eliminar</a></td>
                         </tr>

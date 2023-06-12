@@ -3,7 +3,7 @@ require '../../modelos/tarea.php';
 try {
     $tarea = new Tarea($_GET);
 
-    $tareas = $aplicacion->buscar();
+    $tareas = $tarea->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {

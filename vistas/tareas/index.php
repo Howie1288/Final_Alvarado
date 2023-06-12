@@ -19,26 +19,26 @@
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="Descripcion">Descripcion</label>
-                    <input type="text" name="Descripcion" id="Descripcion" class="form-control">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" name="descripcion" id="escripcion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="Fecha Inicio">Fecha Inicio</label>
-                    <input type="date" name="Fecha Inicio" id="Fecha Inicio" class="form-control">
+                    <label for="fechainicio">Fecha Inicio</label>
+                    <input type="date" name="fechainicio" id="fechainicio" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="Fecha Finalizacion">Fecha Finalizacion</label>
-                    <input type="date" name="Fecha Finalizacion" id="Fecha Finalizacion" class="form-control">
+                    <label for="fechafinalizacion">Fecha Finalizacion</label>
+                    <input type="date" name="fechafinalizacion" id="fechafinalizacion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="Estado">Estado</label>
-                    <input type="text" name="Estado" id="Estado" class="form-control">
+                    <label for="estado">Estado</label>
+                    <input type="text" name="estado" id="estado" class="form-control">
                 </div>
             </div>
 

@@ -29,7 +29,7 @@ class Programador extends Conexion
 
     public function buscar()
     {
-        $sql = "SELECT * from programadores where programador_situacion = 1 ";
+        $sql = "SELECT * from programadores where situacion = 1 ";
 
         if ($this->nombre != '') {
             $sql .= " and nombre like '%$this->nombre%' ";
@@ -70,7 +70,7 @@ class Programador extends Conexion
 
     public function eliminar()
     {
-        $sql = "UPDATE programadores SET programador_situacion = 0 where id_programador = $this->id_programador";
+        $sql = "UPDATE programadores SET situacion = 1 where id_programador = $this->id_programador";
 
         $resultado = self::ejecutar($sql);
         return $resultado;

@@ -13,14 +13,14 @@
             <div class="row mb-3">
                 <div class="col">
                     <label for="precio">Precio del Aplicacion</label>
-                    <input type="number" step="0.01" min="0" name="precio" id="precio" class="form-control">
+                    <input type="number" name="precio" id="precio" class="form-control">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
                     <label for="Situacion">Situacion de Aplicacion</label>
-                    <input type="text"  name="Situacion" id="Situacion" class="form-control">
+                    <input type="text"  name="situacion" id="Situacion" class="form-control">
                 </div>
             </div>
 

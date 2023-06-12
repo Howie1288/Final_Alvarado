@@ -3,7 +3,7 @@
     <div class="container">
         <h1 class="text-center">Buscar Programador</h1>
         <div class="row justify-content-center">
-            <form action="/Final_Alvarado/controladores/clientes/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/Final_Alvarado/controladores/programadores/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="nombre">Nombre del programador</label>

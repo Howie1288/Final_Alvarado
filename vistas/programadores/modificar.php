@@ -16,10 +16,10 @@ require '../../modelos/programador.php';
         <h1 class="text-center">Modificar Programador</h1>
         <div class="row justify-content-center">
             <form action="/Final_Alvarado/controladores/Programadores/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="cliente_id">
+                <input type="hidden" name="id_programador">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nombre">Nombre del cliente</label>
+                        <label for="cliente_nombre">Nombre del programador</label>
                         <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control" required>
                     </div>
                 </div>

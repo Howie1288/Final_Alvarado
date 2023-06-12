@@ -25,22 +25,22 @@ try {
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="Descripcion">Descripcion de la Tarea</label>
-                    <input type="text" name="Descripcion" id="Descripcion" class="form-control" value="<?= $tareas[0]['DESCRIPCION_TAREA'] ?>">
+                    <label for="descripcion">Descripcion de la Tarea</label>
+                    <input type="text" name="descripcion" id="descripcion" class="form-control" value="<?= $tareas[0]['DESCRIPCION_TAREA'] ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="Fecha de Finalizacion">Fecha de Finalizacion</label></label>
-                    <input type="date" name="Fecha de Finalizacion" id="Fecha de Finalizacion" class="form-control" value="<?= $tareas[0]['FECHA_FINALIZACION_TAREA'] ?>">
+                    <label for="FechaFinalizacion">Fecha de Finalizacion</label></label>
+                    <input type="date" name="FechaFinalizacion" id="FechaFinalizacion" class="form-control" value="<?= $tareas[0]['FECHA_FINALIZACION'] ?>">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="Estado">Estado de la Tarea</label>
-                    <input type="text" name="Estado" id="Estado" class="form-control" value="<?= $tareas[0]['ESTADO_TAREA'] ?>">
+                    <label for="estado">Estado de la Tarea</label>
+                    <input type="text" name="estado" id="estado" class="form-control" value="<?= $tareas[0]['ESTADO_TAREA'] ?>">
                 </div>
             </div>
 

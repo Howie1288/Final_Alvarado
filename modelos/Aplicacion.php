@@ -7,7 +7,6 @@ class Aplicacion extends Conexion
     public $precio;
     public $situacion;
     
-
     public function __construct($args = [])
     {
         $this->id_aplicacion= $args['id_aplicacion'] ?? null;

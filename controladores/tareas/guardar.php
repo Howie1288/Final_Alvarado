@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Tarea.php';
+require '../../modelos/Tareas.php';
 
 
 if ($_POST['nombre_tarea'] != '' && $_POST['id_aplicacion'] != ''  && $_POST['descripcion_tarea']!= ''  && $_POST['fecha_inicio'] != ''  && $_POST['fecha_finalizacion']!= ''  && $_POST['estado']) {
