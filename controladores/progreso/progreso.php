@@ -25,7 +25,7 @@ $totalTareas = count($resultados);
 $tareasFinalizadas = 0;
 
 foreach ($resultados as $resultado) {
-    if ($resultado['TAREA_ESTADO'] === 'FINALIZADA') {
+    if ($resultado['TAR_ESTADO'] === 'FINALIZADA') {
         $tareasFinalizadas++;
     }
 }
@@ -51,7 +51,7 @@ if ($totalTareas > 0) {
 <body>
     <div class="container">
         <h1 class="text-center">BUSCAR PROGRESO </h1>
-        <table class="table table-bordered border-dark">
+        <table class="table table-hover table-dark">
             <thead>
                 <tr>
                     <th colspan="2">Nombre Aplicación</th>

@@ -24,7 +24,7 @@ class Asignacion extends Conexion{
             JOIN asignacion_programadores ap ON a.apli_id = ap.asi_apli_id
             JOIN programadores p ON ap.asi_pro_id = p.pro_id
             JOIN tareas t ON t.tar_apli_id = a.apli_id
-            WHERE 1=1";
+            WHERE 1=1 AND tar_situacion = '1'";
     
         if (!empty($apli_id)) {
             $sql .= " AND a.apli_id = $apli_id";

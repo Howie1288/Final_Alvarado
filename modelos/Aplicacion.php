@@ -15,7 +15,7 @@ class Aplicacion extends Conexion{
         $this->apli_id = $args['apli_id'] ?? null;
         $this->apli_nombre = $args['apli_nombre'] ?? '';
         $this->apli_fecha_inicio = $args['apli_fecha_inicio'] ?? '';
-        $this->aplicacion_situacion = $args['aplicacion_situacion'] ?? '';
+        $this->aplicacion_situacion = $args['apli_situacion'] ?? '';
     }
 
     public function guardar(){
@@ -24,14 +24,14 @@ class Aplicacion extends Conexion{
         return $resultado;
     }
     public function buscar(){
-        $sql = "SELECT * FROM aplicaciones WHERE aplicacion_situacion = 1";
+        $sql = "SELECT * FROM aplicaciones WHERE apli_situacion = 1";
     
         if($this->apli_nombre != ''){
-            $sql .= " AND aplicacion_nombre LIKE '%$this->apli_nombre%'";
+            $sql .= " AND apli_nombre LIKE '%$this->apli_nombre%'";
         }
     
         if($this->apli_fecha_inicio != ''){
-            $sql .= " AND aplicacion_fecha_inicio = '$this->apli_fecha_inicio'";
+            $sql .= " AND apli_fecha_inicio = '$this->apli_fecha_inicio'";
         }
     
         if($this->apli_id != null){

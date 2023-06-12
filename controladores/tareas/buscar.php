@@ -48,7 +48,7 @@ try {
                             <td><?= $tarea['APLI_NOMBRE'] ?></td>
                             <td><?= $tarea['TAR_DESCRIPCION'] ?></td>
                             <td><?= $tarea['TAR_ESTADO'] ?></td>
-                            <td><?= date('d/m/Y', strtotime($tarea['TAREA_FECHA'])) ?></td>
+                            <td><?= date('d/m/Y', strtotime($tarea['TAR_FECHA'])) ?></td>
                             <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/tareas/modificar.php?tar_id=<?= $tarea['TAR_ID']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/tareas/eliminar.php?tar_id=<?= $tarea['TAR_ID']?>">Eliminar</a></td>
                         </tr>

@@ -22,7 +22,7 @@ try {
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
 <div class="container">
-    <h1 class="text-center">Formulario de ingreso de programadores y aplicaciones</h1>
+    <h1 class="text-center">Formulario Ingreso Programadores y Aplicaciones</h1>
     <div class="row justify-content-center">
         <form action="/Final_Alvarado/controladores/asignacion/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">

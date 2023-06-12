@@ -30,10 +30,10 @@ class Tarea extends Conexion{
 
     public function buscar()
     {
-        $sql = "SELECT t.*, a.aplicacion_nombre 
+        $sql = "SELECT t.*, a.apli_nombre 
                 FROM tareas t
-                JOIN aplicaciones a ON t.tar_apli_id = a.aplicacion_id
-                WHERE t.tarea_situacion = '1'";
+                JOIN aplicaciones a ON t.tar_apli_id = a.apli_id
+                WHERE t.tar_situacion = '1'";
     
         if ($this->tar_apli_id != null) {
             $sql .= " AND t.tar_apli_id = $this->tar_apli_id";

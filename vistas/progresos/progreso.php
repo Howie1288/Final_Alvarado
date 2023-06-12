@@ -16,7 +16,7 @@ try {
 <div class="container">
     <h1 class="text-center">Formulario de búsqueda de Progreso de Aplicaciones</h1>
     <div class="row justify-content-center">
-        <form action="/Final_Alvarado/controladores/progresos/progreso.php" class="col-lg-8 border bg-light p-3">
+        <form action="/Final_Alvarado/controladores/progreso/progreso.php" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
                     <label for="apli_id">Aplicación</label>

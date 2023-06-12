@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 
 require '../../modelos/Aplicacion.php';
-
+$aplicaciones = [];
 try {
     $aplicacion = new Aplicacion($_GET);
     
@@ -42,7 +42,7 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($aplicaciones) > 0):?>
+                         <?php if(!empty($aplicaciones)):?>
                         <?php foreach($aplicaciones as $key => $aplicacion) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>

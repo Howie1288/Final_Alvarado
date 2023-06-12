@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -67,8 +67,7 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                           
-                            <a class="nav-link" href="/Final_Alvarado/vistas/progreso_aplicacion/progreso_aplicacion.php">Buscar el progreso de las aplicaciones</a>
+                            <a class="nav-link" href="/Final_Alvarado/vistas/progresos/progreso.php">Buscar el progreso de las aplicaciones</a>
                         </li>
                     </ul>
                 </li>
