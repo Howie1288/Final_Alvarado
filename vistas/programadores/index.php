@@ -26,12 +26,12 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="programador_situacion">Situacion del Programador</label>
-                    <input type="text" name="programador_situacion" id="programador_situacion" class="form-control">
-                </div>
-            </div>
+          
+          
+          
+          
+           
+           
 
             <div class="row mb-3">
                 <div class="col">

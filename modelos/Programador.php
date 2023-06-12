@@ -16,13 +16,21 @@ class Programador extends Conexion
         $this->programador_nombre = $args['programador_nombre'] ?? '';
         $this-> programador_apellido = $args['programador_apellido'] ?? '';
         $this->programador_situacion = $args['programador_situacion'] ?? '';
+       
     }
 
     public function guardar()
     {
-        $sql = "INSERT INTO programadores(programador_grado, programador_nombre,  programador_apellido, programador_situacion, ) values('$this->programador_grado','$this->programador_nombre', '$this-> programador_apellido', '$this->programador_situacion')";
+      
+        
+        
+        $sql = "INSERT INTO programadores (programador_grado, programador_nombre,  programador_apellido, programador_situacion ) values('$this->programador_grado','$this->programador_nombre', '$this->programador_apellido', '$this->programador_situacion')";
+
+
         $resultado = self::ejecutar($sql);
+
         return $resultado;
+
     }
 
     public function buscar()

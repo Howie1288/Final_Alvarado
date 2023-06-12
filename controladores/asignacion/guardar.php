@@ -1,7 +1,7 @@
 <?php
 require '../../modelos/Asignacion.php';
 
-
+var_dump($_POST);
 if ($_POST['asignacion_id_aplicacion'] != '' && $_POST['asignacion_id_programador'] != '') {
 
     try {
