@@ -36,7 +36,6 @@ if ($_POST['tar_apli_id'] != '' && $_POST['tar_descripcion'] != '' && $_POST['ta
                         Ocurrió un error: <?= $error ?>
                     </div>
                 <?php endif ?>
-              
             </div>
         </div>
         <div class="row">
