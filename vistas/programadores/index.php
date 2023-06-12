@@ -5,9 +5,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
-
     <div class="container">
-        <h1 class="text-center">Formulario de ingreso de programadores</h1>
+        <h1 class="text-center">Formulario de ingreso de Programadores</h1>
         <div class="row justify-content-center">
             <form action="/Final_Alvarado/controladores/programadores/guardar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
