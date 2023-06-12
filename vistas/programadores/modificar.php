@@ -4,9 +4,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require '../../modelos/Programador.php';
 
+$error = "";
+
 try {
     $programador = new Programador($_GET);
     $programadores = $programador->buscar();
+    if (empty($programadores)) {
+        throw new Exception("No se encontraron programadores");
+    }
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -19,7 +24,9 @@ try {
     <h1 class="text-center">Modificar Programadores</h1>
     <div class="row justify-content-center">
         <form action="/Final_Alvarado/controladores/programadores/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-            <input type="hidden" name="programador_id" value="<?= $programadores[0]['PROGRAMADOR_ID'] ?>">
+            <?php if (!empty($programadores)): ?>
+                <input type="hidden" name="programador_id" value="<?= $programadores[0]['PROGRAMADOR_ID'] ?>">
+            <?php endif; ?>
             <div class="row mb-3">
                 <div class="col">
                     <label for="programador_grado">Grado del Programador</label>

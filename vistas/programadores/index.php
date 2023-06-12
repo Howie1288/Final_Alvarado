@@ -9,7 +9,7 @@ error_reporting(E_ALL);
     <div class="container">
         <h1 class="text-center">Formulario de ingreso de programadores</h1>
         <div class="row justify-content-center">
-            <form action="/Final_Alvarado/controladores/Programadores/guardar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/Final_Alvarado/controladores/programadores/guardar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="programador_grado">Grado Militar del programador</label>
@@ -30,7 +30,7 @@ error_reporting(E_ALL);
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <button type="submit" class="btn btn-info w-100">Buscar</button>
+                        <button type="submit" class="btn btn-info w-100">Agregar</button>
                     </div>
                 </div>
             </form>

@@ -21,7 +21,7 @@ class Programador extends Conexion
 
     public function guardar()
     {
-        $sql = "INSERT INTO programadores (programador_grado, programador_nombre,  programador_apellido, programador_situacion ) values('$this->programador_grado','$this->programador_nombre', '$this->programador_apellido', '$this->programador_situacion')";
+        $sql = "INSERT INTO programadores (programador_grado, programador_nombre,  programador_apellido ) values('$this->programador_grado','$this->programador_nombre', '$this->programador_apellido')";
         $resultado = self::ejecutar($sql);
 
         return $resultado;
