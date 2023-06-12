@@ -1,10 +1,10 @@
 <?php
-require '../../modelos/Aplicacion.php';
+require '../../modelos/Asignacion.php';
 
 
 try {
-    $aplicacion = new Aplicacion($_GET);
-    $resultado = $aplicacion->eliminar();
+    $asignacion = new Asignacion($_GET);
+    $resultado = $asignacion->eliminar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2) {
@@ -42,7 +42,7 @@ try {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/aplicaciones/buscar.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/Final_Alvarado/controladores/asignacion/buscar.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>

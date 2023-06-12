@@ -30,23 +30,21 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>NOMBRE</th>
-                            <th>PRECIO</th>
-                            <th>SITUACION</th>
+                            <th>ASIGNACION APLICACION</th>
+                            <th>ASIGNACION PROGRAMADOR</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (count($aplicaciones) > 0) : ?>
-                            <?php foreach ($aplicaciones as $key => $aplicacion) : ?>
+                        <?php if (count($asignacion) > 0) : ?>
+                            <?php foreach ($asignacion as $key => $aplicacion) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $aplicacion['APLICACION_NOMBRE'] ?></td>
-                                    <td><?= $producto['APLICACION_PRECIO'] ?></td>
-                                    <td><?= $situacion['APLICACION_SITUACION'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/aplicaciones/modificar.php?id_aplicacion=<?= $producto['ID_APLICACION'] ?>">Modificar</a></td>
-                                    <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/aplicaciones/eliminar.php?id_aplicacion=<?= $producto['ID_APLICACION'] ?>">Eliminar</a></td>
+                                    <td><?= $asignacion_id_aplicacion['ASIGNACION_ID_APLICACION'] ?></td>
+                                    <td><?= $asignacion_id_programador['ASIGNACION_ID_PROGRAMADOR'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/asignacion/modificar.php?asignacion_id=<?= $asignacion['ASIGNACION_ID'] ?>">Modificar</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/asignacion/eliminar.php?asignacion_id=<?= $asignacion['ASIGNACION_ID'] ?>">Eliminar</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
@@ -60,7 +58,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/vistas/aplicaciones/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/Final_Alvarado/vistas/asignacion/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

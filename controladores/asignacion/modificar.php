@@ -1,11 +1,11 @@
 <?php
-require '../../modelos/Aplicacion.php';
+require '../../modelos/Asignacion.php';
 
-if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_precio']  != '' && $_POST['id_aplicacion'] != '') {
+if ($_POST['asignacion_id_aplicacion'] != '' && $_POST[' asignacion_id_programador']  != '') {
 
     try {
-        $aplicacion = new Aplicacion($_POST);
-        $resultado = $aplicacion->modificar();
+        $asignacion = new Asignacion($_POST);
+        $resultado = $asignacion->modificar();
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2) {
@@ -45,7 +45,7 @@ if ($_POST['aplicacion_nombre'] != '' && $_POST['aplicacion_precio']  != '' && $
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/controladores/aplicaciones/buscar.php?ombre=<?= $_POST['nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/Final_Alvarado/controladores/asignacion/buscar.php?asignacion_id_aplicacion=<?= $_POST['asignacion_id_aplicacion'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

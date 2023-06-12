@@ -1,12 +1,12 @@
 <?php
-require '../../modelos/Aplicacion.php';
+require '../../modelos/Asignacion.php';
 
 
-if ($_POST['nombre'] != '' && $_POST['precio'] != ''  && $_POST['situacion'] != '') {
+if ($_POST['asignacion_id_aplicacion'] != '' && $_POST['asignacion_id_programador'] != '') {
 
     try {
-        $aplicacion = new Aplicacion($_POST);
-        $resultado = $aplicacion->guardar();
+        $asignacion = new Asignacion($_POST);
+        $resultado = $asignacion->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -47,7 +47,7 @@ if ($_POST['nombre'] != '' && $_POST['precio'] != ''  && $_POST['situacion'] != 
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/Final_Alvarado/vistas/aplicaciones/index.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/Final_Alvarado/vistas/asignacion/index.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>
