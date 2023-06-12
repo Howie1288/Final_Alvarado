@@ -1,18 +1,18 @@
 <?php
-
-abstract class Conexion
-{
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+abstract class Conexion{
     public static $conexion = null;
 
-    private static function conectar()
-    {
-        try {
+    private static function conectar(){
+        try{
             //CONEXION A LA BD DE INFORMIX EN DOCKER 
-            self::$conexion = new PDO('informix:host=host.docker.internal; service=9088; database=mdn3; server=informix; protocol=onsoctcp;EnableScrollableCursors = 1', 'informix', 'in4mix');
+            self::$conexion = new PDO('informix:host=host.docker.internal; service=9088; database=mdn4; server=informix; protocol=onsoctcp;EnableScrollableCursors = 1','informix','in4mix'); 
             // DEFINIR EL MANEJO DE EXCEPCIONES
             self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // echo "CONECTADO";
-        } catch (PDOException $e) {
+        }catch(PDOException $e){
             // IMPRIME EN PANTALLA EL ERROR
             echo "Error de conexion de BD";
             echo "<br>";
@@ -23,8 +23,7 @@ abstract class Conexion
         return self::$conexion;
     }
 
-    public static function ejecutar($sql)
-    {
+    public static function ejecutar($sql){
         // CONECTANDOSE A LA BD CON EL METODO CONECTAR
         self::conectar();
         // PREPARAMOS LA SENTENCIA
@@ -41,8 +40,7 @@ abstract class Conexion
         ];
     }
 
-    public static function servir($sql)
-    {
+    public static function servir($sql){
         // CONECTANDOSE A LA BD CON EL METODO CONECTAR
         self::conectar();
         // PREPARAMOS LA SENTENCIA
@@ -56,4 +54,59 @@ abstract class Conexion
         // DEVOLVEMOS RESULTADOS
         return $resultados;
     }
+}
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
 }

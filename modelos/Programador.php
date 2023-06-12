@@ -1,73 +1,66 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once 'Conexion.php';
 
-class Programador extends Conexion
-{
-    public $programador_id;
-    public $programador_grado;
-    public $programador_nombre;
-    public $programador_apellido;
-    public $programador_situacion;
+class Programador extends Conexion{
+    public $pro_id;
+    public $pro_grado;
+    public $pro_nombre;
+    public $pro_apellido;
+    public $pro_situacion;
 
-    public function __construct($args = [])
+    public function __construct($args = [] )
     {
-        $this->programador_id = $args['programador_id'] ?? null;
-        $this->programador_grado = $args['programador_grado'] ?? '';
-        $this->programador_nombre = $args['programador_nombre'] ?? '';
-        $this-> programador_apellido = $args['programador_apellido'] ?? '';
-        $this->programador_situacion = $args['programador_situacion'] ?? '';
+        $this->pro_id = $args['pro_id'] ?? null;
+        $this->pro_grado = $args['pro_grado'] ?? '';
+        $this->pro_nombre = $args['pro_nombre'] ?? '';
+        $this->pro_apellido = $args['pro_apellido'] ?? '';
+        $this->pro_situacion = $args['programador_situacion'] ?? '';
     }
 
-    public function guardar()
-    {
-        $sql = "INSERT INTO programadores (programador_grado, programador_nombre,  programador_apellido, programador_situacion ) values('$this->programador_grado','$this->programador_nombre', '$this->programador_apellido', '$this->programador_situacion')";
+    public function guardar(){
+        $sql = "INSERT INTO programadores (pro_grado, pro_nombre, pro_apellido) VALUES ('$this->pro_grado', '$this->pro_nombre', '$this->pro_apellido')";
         $resultado = self::ejecutar($sql);
-
         return $resultado;
-
     }
 
-    public function buscar()
-    {
-        $sql = "SELECT * from programadores where situacion = 1 ";
+    public function buscar(){
+        $sql = "SELECT * FROM programadores WHERE pro_situacion = 1";
 
-        if ($this->programador_grado != '') {
-            $sql .= " and programador_grado like '%$this->programador_grado%' ";
+        if($this->pro_grado != ''){
+            $sql .= " AND pro_grado LIKE '%$this->pro_grado%'";
         }
 
-        if ($this->programador_nombre != '') {
-            $sql .= " and programador_nombre = $this->programador_nombre ";
+        if($this->pro_nombre != ''){
+            $sql .= " AND pro_nombre LIKE '%$this->pro_nombre%'";
         }
 
-        if ($this-> programador_apellido != '') {
-            $sql .= " and  programador_apellido = $this-> programador_apellido ";
+        if($this->pro_apellido != ''){
+            $sql .= " AND pro_apellido LIKE '%$this->pro_apellido%'";
         }
 
-        if ($this->programador_situacion != '') {
-            $sql .= " and programador_situacion = $this->programador_situacion ";
-        }
-
-        if ($this->programador_id != null) {
-            $sql .= " and programador_id = $this->programador_id ";
+        if($this->pro_id != null){
+            $sql .= " AND pro_id = $this->pro_id";
         }
 
         $resultado = self::servir($sql);
         return $resultado;
     }
 
-    public function modificar()
-    {
-        $sql = "UPDATE programadores SET programador_grado = '$this->programador_grado', programador_nombre = $this->programador_nombre, programador_apellido = $this->programador_apellido, programador_situacion = $this->programador_situacion where programador_id = $this->programador_id";
-
+    public function modificar(){
+        $sql = "UPDATE programadores SET pro_grado = '$this->pro_grado', pro_nombre = '$this->pro_nombre', pro_apellido = '$this->pro_apellido' WHERE pro_id = $this->pro_id";
+        
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
-    public function eliminar()
-    {
-        $sql = "UPDATE programadores SET situacion = 1 where programador_id = $this->programador_id";
-
+    public function eliminar(){
+        $sql = "UPDATE programadores SET pro_situacion = 0 WHERE pro_id = $this->pro_id";
+        
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 }
+?>
