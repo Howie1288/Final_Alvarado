@@ -32,7 +32,6 @@ try {
                             <th>NO. </th>
                             <th>NOMBRE</th>
                             <th>FECHA</th>
-                            <th>SITUACION</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -44,7 +43,6 @@ try {
                                     <td><?= $key + 1 ?></td>
                                     <td><?= $aplicacion['APLICACION_NOMBRE'] ?></td>
                                     <td><?= $aplicacion['APLICACION_FECHA_INICIO'] ?></td>
-                                    <td><?= $situacion['APLICACION_SITUACION'] ?></td>
                                     <td><a class="btn btn-warning w-100" href="/Final_Alvarado/vistas/aplicaciones/modificar.php?aplicacion_id=<?= $aplicaciones['APLICACION_ID'] ?>">Modificar</a></td>
                                     <td><a class="btn btn-danger w-100" href="/Final_Alvarado/controladores/aplicaciones/eliminar.php?aplicacion_id=<?= $aplicaciones['APLICACION_ID'] ?>">Eliminar</a></td>
                                 </tr>
