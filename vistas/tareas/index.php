@@ -13,14 +13,14 @@
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="ID Aplicacion">ID Aplicacion</label>
-                    <input type="number" step="0.01" min="0" name="ID Aplicacion" id="ID Aplicacion" class="form-control">
+                    <label for="aplicacion">ID Aplicacion</label>
+                    <input type="number" name="aplicacion" id="aplicacion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text" name="descripcion" id="escripcion" class="form-control">
+                    <input type="text" name="descripcion" id="descripcion" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">

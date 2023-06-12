@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/tarea.php';
+require '../../modelos/Tareas.php';
 try {
     $tarea = new Tarea($_GET);
 
